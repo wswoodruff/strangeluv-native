@@ -98,7 +98,7 @@ $ rm -fr $TMPDIR/react-*
 ```
 
 ## Application Structure
-Note the [nestable `routes/`](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure).
+Note the [nestable `scenes/`](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure).
 
 ```
 .
