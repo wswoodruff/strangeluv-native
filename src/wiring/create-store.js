@@ -5,8 +5,6 @@ const Enhancers = require('./enhancers');
 
 module.exports = (initialState = {}) => {
 
-    // Store Instantiation and HMR Setup
-
     const store = Redux.createStore(
         Reducers.makeRoot(),
         initialState,
@@ -17,14 +15,6 @@ module.exports = (initialState = {}) => {
     );
 
     store.asyncReducers = {};
-
-    if (module.hot) {
-        module.hot.accept('./reducers', () => {
-
-            const nextReducer = require('./reducers').makeRoot(store.asyncReducers);
-            store.replaceReducer(nextReducer);
-        });
-    }
 
     return store;
 };

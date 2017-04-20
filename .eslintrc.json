@@ -1,14 +1,10 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "hapi",
-    "standard-react"
-  ],
-  "plugins": [
-    "babel"
+    "hapi", "standard-react"
   ],
   "env": {
-    "browser": true
+    "jest": true
   },
   "globals": {
     "__DEV__": false,

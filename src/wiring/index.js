@@ -1,8 +1,13 @@
-const Strangeluv = require('strangeluv-core');
 
-const wiring = module.exports = new Strangeluv(require.context('../', true, /\.js$/));
+module.exports = (store) => {
 
-if (module.hot) {
-    // Rebuild the sync reducers list
-    module.hot.accept('./reducers.js', () => wiring.flushReducers());
-}
+    // Currently does not work
+    // if (module.hot) {
+    //     module.hot.accept(() => {
+
+    //         store.replaceReducer(require('../reducers')(AppNavigator));
+    //     });
+    // }
+
+    return require('../reducers');
+};

@@ -1,10 +1,10 @@
 const Redux = require('redux');
 const Wiring = require('./');
 
-exports.makeRoot = (asyncReducers) => {
+exports.makeRoot = (store, asyncReducers) => {
 
     return Redux.combineReducers({
-        ...Wiring.reducers(), // Everything in reducers/
+        ...Wiring(store), // Everything in reducers/
         ...asyncReducers
     });
 };
@@ -12,6 +12,6 @@ exports.makeRoot = (asyncReducers) => {
 exports.inject = (store, { key, reducer }) => {
 
     store.asyncReducers[key] = reducer;
-    const root = exports.makeRoot(store.asyncReducers);
+    const root = exports.makeRoot(store, store.asyncReducers);
     store.replaceReducer(root);
 };
