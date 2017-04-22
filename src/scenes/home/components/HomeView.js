@@ -1,5 +1,5 @@
 const React = require('react');
-const { View, Text, Image, StyleSheet } = require('react-native');
+const { ScrollView, Text, Image } = require('react-native');
 const Styles = require('./styles');
 
 class HomeView extends React.Component {
@@ -13,7 +13,7 @@ class HomeView extends React.Component {
         const { navigation } = this.props;
 
         return (
-            <View style={{ margin: 128 }}>
+            <ScrollView style={{ margin: 128 }}>
 
                 <Text onPress={() => {
 
@@ -29,7 +29,7 @@ class HomeView extends React.Component {
                     style={Styles.duck}
                     source={require('../assets/duck.jpg')}
                 />
-            </View>
+            </ScrollView>
         );
     }
 }

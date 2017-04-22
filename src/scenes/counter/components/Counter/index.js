@@ -1,28 +1,28 @@
 const React = require('react');
-const { View, Text, Button } = require('react-native');
+const { ScrollView, Text, Button } = require('react-native');
 
-class Counter extends React.Component{
+class Counter extends React.Component {
 
     render() {
 
-        const props = this.props;
+        const { counter, increment, doubleAsync } = this.props;
 
         return (
 
-            <View style={{ margin: 128 }}>
+            <ScrollView style={{ margin: 128 }}>
                 <Text>Counter:</Text>
                 <Text>{' '}</Text>
-                <Text>{props.counter}</Text>
+                <Text>{counter}</Text>
                 <Button
-                    onPress={props.increment}
+                    onPress={increment}
                     title='Increment'
                 />
                 <Text>{' '}</Text>
                 <Button
-                    onPress={props.doubleAsync}
+                    onPress={doubleAsync}
                     title='Double (Async)'
                 />
-            </View>
+            </ScrollView>
 
         );
     }
