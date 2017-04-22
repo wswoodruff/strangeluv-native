@@ -19,15 +19,15 @@ const store = CreateStore({});
 
 module.exports = (platform) => {
 
-    const AppNavigator = require('./navigators/AppNavigator')(store);
+    const RootNavigator = require('./navigators/RootNavigator')(store);
 
-    const appContainer = React.createClass({
+    const AppContainerClass = React.createClass({
 
         render() {
 
             return (
                 <AppContainer store={store}>
-                    <AppNavigator />
+                    <RootNavigator />
                 </AppContainer>
             );
         }
@@ -35,5 +35,5 @@ module.exports = (platform) => {
 
     // register with the AppRegistery and :rocket: into space!
 
-    AppRegistry.registerComponent('strangeluvnative', () => appContainer);
+    AppRegistry.registerComponent('strangeluvnative', () => AppContainerClass);
 };
