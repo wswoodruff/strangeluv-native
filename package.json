@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "scripts": {
     "start": "react-native start",
-    "dev": "react-native run-ios"
+    "dev": "react-native run-ios",
+    "i": "react-native run-ios",
+    "ios": "react-native run-ios",
+    "a": "react-native run-android",
+    "android": "react-native run-android"
   },
   "dependencies": {
     "babel-cli": "^6.5.1",
