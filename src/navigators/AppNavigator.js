@@ -1,7 +1,7 @@
 const React = require('react');
 const Reducers = require('../wiring/reducers');
 const Connect = require('react-redux').connect;
-const { StackNavigator, addNavigationHelpers } = require('react-navigation');
+const { DrawerNavigator, addNavigationHelpers } = require('react-navigation');
 const internals = {};
 
 internals.connect = Connect(
@@ -24,7 +24,7 @@ module.exports = (store) => {
 
     // Scenes returns [ routeConfig, stackNavigatorConfig ]
 
-    const AppStackNavigator = StackNavigator(...Scenes);
+    const AppDrawerNavigator = DrawerNavigator(...Scenes);
 
     class AppNavigator extends React.Component {
 
@@ -33,7 +33,7 @@ module.exports = (store) => {
             const { dispatch, nav } = this.props;
 
             return (
-                <AppStackNavigator
+                <AppDrawerNavigator
                     navigation={
                         addNavigationHelpers({
                             dispatch,
@@ -50,7 +50,7 @@ module.exports = (store) => {
         nav: React.PropTypes.any.isRequired
     };
 
-    const appNavReducer = require('../reducers/nav')(AppStackNavigator);
+    const appNavReducer = require('../reducers/nav')(AppDrawerNavigator);
 
     Reducers.inject(store, { key: 'nav', reducer: appNavReducer });
 
