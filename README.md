@@ -97,7 +97,7 @@ Note the [nestable `scenes/`](https://github.com/davezuko/react-redux-starter-ki
 .
 ├── android/                 # Android app folder project (managed by react-native)
 ├── config/                  # Project configuration settings
-├── ios/                     # Android app folder project (managed by react-native)
+├── ios/                     # iOS app folder project (managed by react-native)
 ├── src/                     # Application source code
 │   ├── index.js             # Application bootstrap and rendering
 │   ├── action-types/        # Action types
