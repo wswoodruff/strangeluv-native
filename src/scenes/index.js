@@ -46,7 +46,6 @@ const drawerRoutes = (store) => {
     };
 };
 
-
 class CustomDrawerContentComponent extends React.Component {
 
     render() {
@@ -70,7 +69,6 @@ module.exports = (store) => {
         {
             // Main app navigation config (drawer nav)
             // https://reactnavigation.org/docs/navigators/drawer#DrawerNavigatorConfig
-            initialRouteName: 'Main',
             drawerPosition: 'right',
             contentComponent: CustomDrawerContentComponent
         }
