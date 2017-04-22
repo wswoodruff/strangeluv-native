@@ -3,14 +3,9 @@
 ## Notable differences between `strangeluv-native` and [`strangeluv`](https://github.com/BigRoomStudios/strangeluv)
 
 - `strangeluv-native` is a boilerplate for react-native. [`strangeluv`](https://github.com/BigRoomStudios/strangeluv) is a boilerplate for react-web.
+- You must rename the 'strangeluvnative' project before npm installing
 - `routes` in react-web are now referred to as `scenes`.
-- Using [react-navigation](https://github.com/react-community/react-navigation) as prescribed in this project, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...react-native-material-bottom-navigation)
-
-
-## Renaming the project: _This must be done before any other coding, even before npm install_
-#### _Note: No spaces or capitals are allowed in the app name_
-
-#### See the [Section on #Renaming below](#renaming)
+- Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...react-native-material-bottom-navigation)
 
 ## > How I Learned to Stop Worrying and Love _React Native_
 
@@ -26,6 +21,7 @@ Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) Rea
 1. [Getting Started](#getting-started)
 1. [Application Structure](#application-structure)
 1. [Development](#development)
+1. [Recipes](#recipes)
 1. [Thank You](#thank-you)
 
 ## Toolset
@@ -47,18 +43,36 @@ Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) Rea
 Setup your environment (Get ANDROID_HOME var all set, install xCode if ur on a Mac)
 See this Getting Started guide on Facebook's Github: https://facebook.github.io/react-native/docs/getting-started.html
 
-After that, in terminal:
+#### Git clone the project, then rename it
 ```bash
 $ npm install -g react-native
+$ npm install -g react-native-rename
 $ git clone https://github.com/wswoodruff/strangeluv-native
 $ mv strangeluv-native my-project
 $ cd my-project   # Then adjust package.json and readme as necessary
+$ react-native-rename mynewprojectname # No spaces or capitals are allowed or this won't work on Android!
+$ grep -e 'strangeluvnative' -rl . | xargs sed -i '' 's/strangeluvnative/mynewprojectname/g'
+$ # Note: the grep line above was reported as non-working on another computer. If you'd like to PR
+$ # a better find-and-replace one-liner or short script for this, that'd be welcome! =)
+```
 
-# Rename your project at this point. See [#Renaming](#Renaming)
-# ** No uppercase spaces or capitals in your app name **, or Android will give you problems.
+Now inside your `ios` folder, make sure all of the top-level files and folders match your project's name.
 
+If you've worked on another react-native project, you may need to clear your watchman cache,
+and you may be met with a red screen.
+
+If you've been working on other react-native projects, do these steps:
+```bash
+$ # If you ran npm install by this point, go ahead and rm -rf node_modules
+$ watchman watch-del-all
+$ rm -fr $TMPDIR/react-*
+```
+
+Now launch!
+```bash
+$ # Side note, you'll almost certainly see a red screen at some point during this setup.
 $ npm install     # Install project dependencies
-$ npm run dev     # Compile and launch to iOS
+$ npm run dev     # Compile and launch to iOS simulator
 ```
 
 If all goes well you should see something like this,
@@ -75,27 +89,6 @@ If all goes well you should see something like this,
 |`dev`|Starts the app in an iOS simulator|
 
 
-## Renaming
-```bash
-$ npm install -g react-native-rename
-$ # cd to your app's root directory
-$ react-native-rename mynewprojectname # No spaces or capitals are allowed or this won't work on Android!
-$ # I previously had this line: grep -e 'strangeluvnative' -rl . | xargs sed -i '' 's/strangeluvnative/mynewprojectname/g'
-$ # but it was proven as non-working on another computer, so I can't have you typing it. If you'd like to PR
-$ # a better find-and-replace one-liner or short script for this, that'd be welcome. 
-```
-
-Now inside your `ios` folder, rename all of the top-level files and folders to your project's name.
-
-Now, if you've worked on another react-native project, you may need to clear your watchman cache,
-and you may be met with a red screen.
-
-If you've been working on other react-native projects, do these steps:
-```bash
-$ # If you ran npm install by this point, go ahead and rm -rf node_modules
-$ watchman watch-del-all
-$ rm -fr $TMPDIR/react-*
-```
 
 ## Application Structure
 Note the [nestable `scenes/`](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure).
@@ -162,8 +155,9 @@ We use `react-navigation`
 
 to define units of logic within our application. See the [application structure](#application-structure) section for more information.
 
-### Recipes
+## Recipes
  - Incorporating bottom navigation using [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation) [[here](https://github.com/wswoodruff/strangeluv-native/compare/master...react-native-material-bottom-navigation)]
+ - Right side [DrawerNavigator](https://github.com/wswoodruff/strangeluv-native/compare/master...drawer) from react-native
 
 ## Deployment
 ### For development (`npm run dev`)
