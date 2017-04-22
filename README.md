@@ -156,15 +156,15 @@ We use `react-navigation`
 to define units of logic within our application. See the [application structure](#application-structure) section for more information.
 
 ## Recipes
- - Incorporating bottom navigation using [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation) [[here](https://github.com/wswoodruff/strangeluv-native/compare/master...react-native-material-bottom-navigation)]
- - Right side [DrawerNavigator](https://github.com/wswoodruff/strangeluv-native/compare/master...drawer) from react-native
+ - Incorporating bottom navigation using [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation) [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...react-native-material-bottom-navigation)]
+ - Right side [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-native[[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...drawer)
 
 ## Deployment
 ### For development (`npm run dev`)
 Runs a react-native Packager build with HMR _currently for views only_.
 
 ### For production
-Run react-native commands to publish your apps.
+This article, [First Time Deploying With React Native](https://medium.com/the-react-native-log/first-time-deploying-with-react-native-f524eb3e705d) seems interesting, I haven't tried it yet though.
 
 ### Styles
 Styles are currently done using .js files, with react-native [StyleSheet](https://facebook.github.io/react-native/docs/stylesheet.html) settings.
