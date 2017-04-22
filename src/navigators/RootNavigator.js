@@ -14,26 +14,33 @@ module.exports = (store) => {
 
     const Scenes = require('../scenes')(store);
 
+    if (!Scenes.routeConfig || !Scenes.initialRouteName) {
+        throw new Error('Scenes must export props "routeConfig" and "initialRouteName"');
+    }
+
+    // https://reactnavigation.org/docs/navigators
     // https://reactnavigation.org/docs/navigators/stack#RouteConfigs
-    // https://reactnavigation.org/docs/navigators/stack#StackNavigatorConfig
 
-    // If you don't want a StackNavigator as your root navigator like you
-    // see below, change it here and in '../scenes'.
-    // Make sure ../scenes exports a correct
-    // config for your root stack:
+    // Scenes returns { routeConfig, initialRouteName }
 
-    // Scenes returns [ routeConfig, stackNavigatorConfig ]
+    const AppNavigator = StackNavigator(
 
-    const AppStackNavigator = StackNavigator(...Scenes);
+        Scenes.routeConfig,
 
-    class AppNavigator extends React.Component {
+        {
+            // nav config
+            initialRouteName: Scenes.initialRouteName
+        }
+    );
+
+    class AppNavigatorClass extends React.Component {
 
         render() {
 
             const { dispatch, nav } = this.props;
 
             return (
-                <AppStackNavigator
+                <AppNavigator
                     navigation={
                         addNavigationHelpers({
                             dispatch,
@@ -45,14 +52,14 @@ module.exports = (store) => {
         };
     };
 
-    AppNavigator.propTypes = {
+    AppNavigatorClass.propTypes = {
         dispatch: React.PropTypes.any.isRequired,
         nav: React.PropTypes.any.isRequired
     };
 
-    const appNavReducer = require('../reducers/nav')(AppStackNavigator);
+    const appNavReducer = require('../reducers/nav')(AppNavigator);
 
     Reducers.inject(store, { key: 'nav', reducer: appNavReducer });
 
-    return internals.connect(AppNavigator);
+    return internals.connect(AppNavigatorClass);
 };
