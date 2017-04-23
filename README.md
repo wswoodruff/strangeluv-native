@@ -159,6 +159,12 @@ to define units of logic within our application. See the [application structure]
  - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)]  integrating [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation)
  - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer)] integrating [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-native
   - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-kit)] integrating [react-native-material-kit](https://github.com/xinthink/react-native-material-kit)
+-- After merging `recipe-react-native-material-kit`, you'll want to
+  ```
+  npm install
+  react-native link react-native-material-kit
+  ```
+  - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer-material-kit-bottom-navigation)] integrating the `trifecta` of components used in the above recipes: drawer, react-native-material-kit, and react-native-material-bottom-navigation.
 
 ## Deployment
 ### For development (`npm run dev`)
