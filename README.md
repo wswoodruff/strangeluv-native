@@ -153,7 +153,7 @@ to define units of logic within our application. See the [application structure]
 
 ## Recipes
  - Incorporating bottom navigation using [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation) [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)]
- - Right side [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-native[[recipe]](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer)
+ - Right side [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-native[[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer)]
 
 ## Deployment
 ### For development (`npm run dev`)
