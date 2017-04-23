@@ -43,6 +43,4 @@ Counter.propTypes = {
     increment: React.PropTypes.func.isRequired
 };
 
-console.log(Counter);
-
 module.exports = Counter;

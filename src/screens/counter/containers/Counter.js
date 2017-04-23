@@ -16,5 +16,4 @@ internals.connect = Connect(
 );
 
 // Hook them up to the counter
-console.log(Counter);
 module.exports = internals.connect(Counter);
