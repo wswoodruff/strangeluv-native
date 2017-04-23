@@ -7,6 +7,11 @@
 - `routes` in react-web are now referred to as `screens`.
 - Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
 
+## Recipes
+In case you want to jump right into it, these recipes are example apps
+integrating various popular libraries and navigation configurations:
+[#Recipes](#recipes)
+
 ## > How I Learned to Stop Worrying and Love _React Native_
 
 Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) React/Redux starter kit. We've made it our own. We've also stolen most of this README from strangeluv. In here you'll find react-native, Redux, and a well-architected workflow that uses react-native's own Packager instead of Webpack. Follow the file-structure in this boilerplate to profit from well-thought, battle-proven code separation patterns used in [strangeluv](https://github.com/BigRoomStudios/strangeluv) for react-web.
@@ -152,8 +157,9 @@ We use `react-navigation`
 to define units of logic within our application. See the [application structure](#application-structure) section for more information.
 
 ## Recipes
- - Incorporating bottom navigation using [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation) [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)]
- - Right side [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-native[[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer)]
+ - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)]  integrating [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation)
+ - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer)] integrating [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-native
+  - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-kit)] integrating [react-native-material-kit](https://github.com/xinthink/react-native-material-kit)
 
 ## Deployment
 ### For development (`npm run dev`)
