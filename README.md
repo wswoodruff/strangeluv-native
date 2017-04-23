@@ -164,7 +164,7 @@ to define units of logic within our application. See the [application structure]
   npm install
   react-native link react-native-material-kit
   ```
-  - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer-material-kit-bottom-navigation)] integrating the trifecta of components used in the above recipes: drawer, react-native-material-kit, and react-native-material-bottom-navigation.
+  - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer-material-kit-bottom-navigation)] integrating the `trifecta` of components used in the above recipes: drawer, react-native-material-kit, and react-native-material-bottom-navigation.
 
 ## Deployment
 ### For development (`npm run dev`)
