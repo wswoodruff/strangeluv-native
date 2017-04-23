@@ -48,8 +48,7 @@ See this Getting Started guide on Facebook's Github: https://facebook.github.io/
 ```bash
 $ npm install -g react-native
 $ npm install -g react-native-rename
-$ git clone https://github.com/wswoodruff/strangeluv-native
-$ mv strangeluv-native my-project
+$ git clone https://github.com/wswoodruff/strangeluv-native my-project
 $ cd my-project   # Then adjust package.json and readme as necessary
 $ react-native-rename mynewprojectname # No spaces or capitals are allowed or this won't work on Android!
 $ grep -e 'strangeluvnative' -rl . | xargs sed -i '' 's/strangeluvnative/mynewprojectname/g'
