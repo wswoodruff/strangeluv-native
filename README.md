@@ -52,8 +52,8 @@ $ git clone https://github.com/wswoodruff/strangeluv-native my-project
 $ cd my-project   # Then adjust package.json and readme as necessary
 $ react-native-rename mynewprojectname # No spaces or capitals are allowed or this won't work on Android!
 $ grep -e 'strangeluvnative' -rl . | xargs sed -i '' 's/strangeluvnative/mynewprojectname/g'
-$ # Note: the grep line above was reported as non-working on another computer. If you'd like to PR
-$ # a better find-and-replace one-liner or short script for this, that'd be welcome! =)
+# Note: the grep line above was reported as non-working on another computer. If you'd like to PR
+# a better find-and-replace one-liner or short script for this, that'd be welcome! =)
 ```
 
 Now inside your `ios` folder, make sure all of the top-level files and folders match your project's name.
@@ -63,14 +63,14 @@ and you may be met with a red screen.
 
 If you've been working on other react-native projects, do these steps:
 ```bash
-$ # If you ran npm install by this point, go ahead and rm -rf node_modules
+# If you ran npm install by this point, go ahead and rm -rf node_modules
 $ watchman watch-del-all
 $ rm -fr $TMPDIR/react-*
 ```
 
 Now launch!
 ```bash
-$ # Side note, you'll almost certainly see a red screen at some point during this setup.
+# Side note, you'll almost certainly see a red screen at some point during this setup.
 $ npm install     # Install project dependencies
 $ npm run dev     # Compile and launch to iOS simulator
 ```
