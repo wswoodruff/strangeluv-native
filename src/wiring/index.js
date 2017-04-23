@@ -1,4 +1,3 @@
-
 module.exports = (store) => {
 
     // Currently does not work
