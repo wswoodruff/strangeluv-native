@@ -4,7 +4,7 @@ const Home = require('./home');
 
 // This is our main route config,
 // to have a single place to collect
-// our scenes and configure their
+// our screens and configure their
 // relationships via other navigators
 
 module.exports = (store) => {

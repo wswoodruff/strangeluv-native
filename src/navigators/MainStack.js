@@ -9,14 +9,14 @@ const Styles = StyleSheet.create({
     }
 });
 
-module.exports = (store, scenes) => {
+module.exports = (store, screens) => {
 
     return StackNavigator(
         {
-            ...scenes.routeConfig
+            ...screens.routeConfig
         },
         {
-            initialRouteName: scenes.initialRouteName,
+            initialRouteName: screens.initialRouteName,
             headerMode: 'screen',
             navigationOptions: {
                 header: ({ navigate }) => ({

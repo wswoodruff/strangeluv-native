@@ -15,21 +15,21 @@ internals.connect = Connect(
 
 module.exports = (store) => {
 
-    const Scenes = require('../../scenes')(store);
+    const Screens = require('../../screens')(store);
 
-    if (!Scenes.routeConfig || !Scenes.initialRouteName) {
-        throw new Error('Scenes must export props "routeConfig" and "initialRouteName"');
+    if (!Screens.routeConfig || !Screens.initialRouteName) {
+        throw new Error('Screens must export props "routeConfig" and "initialRouteName"');
     }
 
     // https://reactnavigation.org/docs/navigators
     // https://reactnavigation.org/docs/navigators/stack#RouteConfigs
 
-    // Scenes returns { routeConfig, initialRouteName }
+    // Screens returns { routeConfig, initialRouteName }
 
     const AppNavigator = DrawerNavigator(
 
         {
-            Main: { screen: MainStack(store, Scenes) }
+            Main: { screen: MainStack(store, Screens) }
         },
         {
             // nav config
