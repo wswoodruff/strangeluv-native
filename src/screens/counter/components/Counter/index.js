@@ -1,6 +1,6 @@
 const React = require('react');
 const { ScrollView, Text } = require('react-native');
-
+const Icon = require('react-native-vector-icons/MaterialIcons').default;
 const { MKButton } = require('react-native-material-kit');
 
 const IncrementBtn = MKButton.coloredButton()
@@ -13,6 +13,12 @@ const CounterBtn = MKButton.coloredButton()
 
 
 class Counter extends React.Component {
+
+    static navigationOptions = {
+        tabBar: {
+            icon: () => (<Icon size={24} color='white' name='add' />)
+        }
+    }
 
     render() {
 

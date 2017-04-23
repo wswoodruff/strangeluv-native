@@ -1,7 +1,7 @@
 const React = require('react');
 const { StyleSheet } = require('react-native');
-const { StackNavigator } = require('react-navigation');
-const MainTabs = require('./MainTabs');
+const { TabNavigator } = require('react-navigation');
+const { NavigationComponent } = require('react-native-material-bottom-navigation');
 const Icon = require('react-native-vector-icons/MaterialIcons').default;
 
 const Styles = StyleSheet.create({
@@ -12,12 +12,16 @@ const Styles = StyleSheet.create({
 
 module.exports = (store, screens) => {
 
-    return StackNavigator(
+    return TabNavigator(
         {
-            MainTabs: { screen: MainTabs(store, screens) }
+            ...screens.routeConfig
         },
         {
-            initialRouteName: 'MainTabs',
+            initialRouteName: screens.initialRouteName,
+            tabBarComponent: NavigationComponent,
+            tabBarPosition: 'bottom',
+            tabBarOptions: screens.tabBarOptions,
+
             headerMode: 'screen',
             navigationOptions: {
                 header: ({ navigate }) => ({

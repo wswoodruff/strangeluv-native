@@ -1,7 +1,7 @@
 const React = require('react');
 const { ScrollView, Text, Image } = require('react-native');
 const Styles = require('./styles');
-
+const Icon = require('react-native-vector-icons/MaterialIcons').default;
 const { MKButton } = require('react-native-material-kit');
 
 const HomeBtn = MKButton.coloredButton()
@@ -14,6 +14,12 @@ const CounterBtn = MKButton.coloredButton()
 
 
 class HomeView extends React.Component {
+
+    static navigationOptions = {
+        tabBar: {
+            icon: () => (<Icon size={24} color='white' name='home' />)
+        }
+    }
 
     static propTypes = {
         navigation: React.PropTypes.object.isRequired
