@@ -12,24 +12,24 @@ internals.connect = Connect(
 
 module.exports = (store) => {
 
-    const Screen = require('../screens')(store);
+    const Screens = require('../screens')(store);
 
-    if (!Screen.routeConfig || !Screen.initialRouteName) {
-        throw new Error('Screen must export props "routeConfig" and "initialRouteName"');
+    if (!Screens.routeConfig || !Screens.initialRouteName) {
+        throw new Error('Screens must export props "routeConfig" and "initialRouteName"');
     }
 
     // https://reactnavigation.org/docs/navigators
     // https://reactnavigation.org/docs/navigators/stack#RouteConfigs
 
-    // Screen returns { routeConfig, initialRouteName }
+    // Screens returns { routeConfig, initialRouteName }
 
     const AppNavigator = StackNavigator(
 
-        Screen.routeConfig,
+        Screens.routeConfig,
 
         {
             // nav config
-            initialRouteName: Screen.initialRouteName
+            initialRouteName: Screens.initialRouteName
         }
     );
 
