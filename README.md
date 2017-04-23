@@ -86,7 +86,8 @@ If all goes well you should see something like this,
 
 |`npm run <script>`|Description|
 |------------------|-----------|
-|`dev`|Starts the app in an iOS simulator|
+|`dev`, `i`, `ios`|Starts the app in an iOS simulator|
+|`a`, `android`|Starts the app in an Android simulator|
 
 
 
