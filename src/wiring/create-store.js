@@ -5,10 +5,16 @@ const Enhancers = require('./enhancers');
 
 module.exports = (initialState = {}) => {
 
+    let composeFunc = Redux.compose;
+
+    if (__DEV__) {
+        composeFunc = require('remote-redux-devtools').composeWithDevTools({ realtime: true });
+    }
+
     const store = Redux.createStore(
         Reducers.makeRoot(),
         initialState,
-        Redux.compose(
+        composeFunc(
             Redux.applyMiddleware(...Middleware),
             ...Enhancers
         )

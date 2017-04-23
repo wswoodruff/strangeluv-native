@@ -3,11 +3,14 @@
   "version": "0.0.1",
   "scripts": {
     "start": "react-native start",
-    "dev": "react-native run-ios",
-    "i": "react-native run-ios",
-    "ios": "react-native run-ios",
-    "a": "react-native run-android",
-    "android": "react-native run-android"
+    "dev": "NODE_ENV=development react-native run-ios",
+    "i": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "ios": "node node_modules/react-native/local-cli/cli.js run-ios",
+    "a": "node node_modules/react-native/local-cli/cli.js run-android",
+    "android": "node node_modules/react-native/local-cli/cli.js run-android",
+    "link": "node node_modules/react-native/local-cli/cli.js link",
+    "remotedev": "remotedev-debugger --injectserver",
+    "postinstall": "npm run link && npm run remotedev && rndebugger-open"
   },
   "dependencies": {
     "babel-cli": "^6.5.1",
@@ -69,6 +72,8 @@
     "eslint-plugin-hapi": "^4.0.0",
     "eslint-plugin-promise": "3.3.0",
     "eslint-plugin-react": "6.9.0",
-    "eslint-plugin-standard": "2.0.1"
+    "eslint-plugin-standard": "2.0.1",
+    "remote-redux-devtools": "^0.5.7",
+    "remote-redux-devtools-on-debugger": "^0.7.0"
   }
 }

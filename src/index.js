@@ -5,6 +5,17 @@ const AppContainer = require('./containers/App');
 
 const CreateStore = require('./wiring/create-store');
 
+if (__DEV__) {
+
+    global.XMLHttpRequest = global.originalXMLHttpRequest ?
+        global.originalXMLHttpRequest :
+        global.XMLHttpRequest;
+
+    global.FormData = global.originalFormData ?
+        global.originalFormData :
+        global.FormData;
+}
+
 // TODO: Empty object until we get persistant storage hooked up
 const store = CreateStore({});
 
