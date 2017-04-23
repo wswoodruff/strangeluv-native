@@ -4,14 +4,15 @@
 
 - `strangeluv-native` is a boilerplate for react-native. [`strangeluv`](https://github.com/BigRoomStudios/strangeluv) is a boilerplate for react-web.
 - You must rename the 'strangeluvnative' project before npm installing
-- `routes` in react-web are now referred to as `scenes`.
-- Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...react-native-material-bottom-navigation)
+- `routes` in react-web are now referred to as `screens`.
+- Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
+
+## Recipes
+In case you want to jump right into it, these recipes are example apps
+integrating various popular libraries and navigation configurations:
+[#Recipes](#recipes)
 
 ## > How I Learned to Stop Worrying and Love _React Native_
-
-[![Build Status](https://travis-ci.org/BigRoomStudios/strangeluv.svg?branch=master)](https://travis-ci.org/BigRoomStudios/strangeluv?branch=master)
-[![dependencies](https://david-dm.org/BigRoomStudios/strangeluv.svg)](https://david-dm.org/BigRoomStudios/strangeluv)
-[![devDependency Status](https://david-dm.org/BigRoomStudios/strangeluv/dev-status.svg)](https://david-dm.org/BigRoomStudios/strangeluv#info=devDependencies)
 
 Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) React/Redux starter kit. We've made it our own. We've also stolen most of this README from strangeluv. In here you'll find react-native, Redux, and a well-architected workflow that uses react-native's own Packager instead of Webpack. Follow the file-structure in this boilerplate to profit from well-thought, battle-proven code separation patterns used in [strangeluv](https://github.com/BigRoomStudios/strangeluv) for react-web.
 
@@ -47,8 +48,7 @@ See this Getting Started guide on Facebook's Github: https://facebook.github.io/
 ```bash
 $ npm install -g react-native
 $ npm install -g react-native-rename
-$ git clone https://github.com/wswoodruff/strangeluv-native
-$ mv strangeluv-native my-project
+$ git clone https://github.com/wswoodruff/strangeluv-native my-project
 $ cd my-project   # Then adjust package.json and readme as necessary
 $ react-native-rename mynewprojectname # No spaces or capitals are allowed or this won't work on Android!
 $ grep -e 'strangeluvnative' -rl . | xargs sed -i '' 's/strangeluvnative/mynewprojectname/g'
@@ -91,7 +91,7 @@ If all goes well you should see something like this,
 
 
 ## Application Structure
-Note the [nestable `scenes/`](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure).
+Note the [nestable `screens/`](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure).
 
 ```
 .
@@ -109,12 +109,12 @@ Note the [nestable `scenes/`](https://github.com/davezuko/react-redux-starter-ki
 │   ├── static/              # Static assets (not imported anywhere in source code)
 │   ├── styles/              # Application-wide styles
 │   ├── wiring/              # Wiring between Redux and the app
-│   └── scenes/              # Main scene definitions and async split points
-│       ├── index.js         # Bootstrap main application scenes with store, connect with app navigator
+│   └── screens/             # Main screen definitions and async split points
+│       ├── index.js         # Bootstrap main application screens with store, connect with app navigator
 │       └── home/            # Fractal route
 │           ├── index.js     # Route definitions and async split points
 │           ├── $$$/         # Any folders you might find under src/ like reducers/, etc.
-│           └── scenes/      # Nested scenes
+│           └── screens/     # Nested screens
 │           └── navigators/  # Nested navigators
 │           └── components/  # Nested components
 │           └── containers/  # Nested containers
@@ -156,8 +156,15 @@ We use `react-navigation`
 to define units of logic within our application. See the [application structure](#application-structure) section for more information.
 
 ## Recipes
- - Incorporating bottom navigation using [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation) [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...react-native-material-bottom-navigation)]
- - Right side [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-native[[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...drawer)
+ - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)]  integrating [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation)
+ - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer)] integrating [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-native
+  - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-kit)] integrating [react-native-material-kit](https://github.com/xinthink/react-native-material-kit)
+-- After merging `recipe-react-native-material-kit`, you'll want to
+  ```
+  npm install
+  react-native link react-native-material-kit
+  ```
+  - [[recipe](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer-material-kit-bottom-navigation)] integrating the `trifecta` of components used in the above recipes: drawer, react-native-material-kit, and react-native-material-bottom-navigation.
 
 ## Deployment
 ### For development (`npm run dev`)
