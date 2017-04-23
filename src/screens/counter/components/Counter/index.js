@@ -1,5 +1,16 @@
 const React = require('react');
-const { ScrollView, Text, Button } = require('react-native');
+const { ScrollView, Text } = require('react-native');
+
+const { MKButton } = require('react-native-material-kit');
+
+const IncrementBtn = MKButton.coloredButton()
+    .withText('Increment')
+    .build();
+
+const CounterBtn = MKButton.coloredButton()
+    .withText('Double (Async)')
+    .build();
+
 
 class Counter extends React.Component {
 
@@ -13,14 +24,12 @@ class Counter extends React.Component {
                 <Text>Counter:</Text>
                 <Text>{' '}</Text>
                 <Text>{counter}</Text>
-                <Button
+                <IncrementBtn
                     onPress={increment}
-                    title='Increment'
                 />
                 <Text>{' '}</Text>
-                <Button
+                <CounterBtn
                     onPress={doubleAsync}
-                    title='Double (Async)'
                 />
             </ScrollView>
 

@@ -2,6 +2,17 @@ const React = require('react');
 const { ScrollView, Text, Image } = require('react-native');
 const Styles = require('./styles');
 
+const { MKButton } = require('react-native-material-kit');
+
+const HomeBtn = MKButton.coloredButton()
+    .withText('Home')
+    .build();
+
+const CounterBtn = MKButton.coloredButton()
+    .withText('Counter')
+    .build();
+
+
 class HomeView extends React.Component {
 
     static propTypes = {
@@ -16,14 +27,15 @@ class HomeView extends React.Component {
 
             <ScrollView style={{ margin: 128 }}>
 
-                <Text onPress={() => {
+                <HomeBtn onPress={() => {
 
                     navigation.navigate('Home');
-                }}>Home</Text>
-                <Text onPress={() => {
+                }} />
+
+                <CounterBtn onPress={() => {
 
                     navigation.navigate('Counter');
-                }}>Counter</Text>
+                }} />
 
                 <Text style={Styles.title}>Welcome!</Text>
                 <Image
