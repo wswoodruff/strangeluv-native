@@ -4,7 +4,7 @@
 
 - `strangeluv-native` is a boilerplate for react-native. [`strangeluv`](https://github.com/BigRoomStudios/strangeluv) is a boilerplate for react-web.
 - You must rename the 'strangeluvnative' project before npm installing
-- `routes` in react-web are now referred to as `scenes`.
+- `routes` in react-web are now referred to as `screens`.
 - Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
 
 ## > How I Learned to Stop Worrying and Love _React Native_
@@ -87,7 +87,7 @@ If all goes well you should see something like this,
 
 
 ## Application Structure
-Note the [nestable `scenes/`](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure).
+Note the [nestable `screens/`](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure).
 
 ```
 .
@@ -105,12 +105,12 @@ Note the [nestable `scenes/`](https://github.com/davezuko/react-redux-starter-ki
 │   ├── static/              # Static assets (not imported anywhere in source code)
 │   ├── styles/              # Application-wide styles
 │   ├── wiring/              # Wiring between Redux and the app
-│   └── scenes/              # Main scene definitions and async split points
-│       ├── index.js         # Bootstrap main application scenes with store, connect with app navigator
+│   └── screens/             # Main screen definitions and async split points
+│       ├── index.js         # Bootstrap main application screens with store, connect with app navigator
 │       └── home/            # Fractal route
 │           ├── index.js     # Route definitions and async split points
 │           ├── $$$/         # Any folders you might find under src/ like reducers/, etc.
-│           └── scenes/      # Nested scenes
+│           └── screens/     # Nested screens
 │           └── navigators/  # Nested navigators
 │           └── components/  # Nested components
 │           └── containers/  # Nested containers
