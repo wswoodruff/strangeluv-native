@@ -13,8 +13,6 @@ const CounterBtn = MKButton.coloredButton()
     .build();
 
 
-console.log(require('reducers'));
-
 class HomeView extends React.Component {
 
     static navigationOptions = {
