@@ -1,9 +1,8 @@
 const React = require('react');
 const ReactNative = require('react-native');
 const AppRegistry = ReactNative.AppRegistry;
-const AppContainer = require('./containers/App');
-
-const CreateStore = require('./wiring/create-store');
+const AppContainer = require('containers/App');
+const CreateStore = require('wiring/create-store');
 
 if (__DEV__) {
 

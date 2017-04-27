@@ -2,6 +2,8 @@ const React = require('react');
 const { ScrollView, Text, Image } = require('react-native');
 const Styles = require('./styles');
 
+console.log(require('reducers'));
+
 class HomeView extends React.Component {
 
     static propTypes = {

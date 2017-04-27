@@ -12,6 +12,19 @@
     "remotedev": "remotedev-debugger --injectserver",
     "postinstall": "npm run link && npm run remotedev && rndebugger-open"
   },
+  "browser": {
+      "action-types": "strangeluvnative/src/action-types",
+      "actions": "strangeluvnative/src/actions",
+      "components": "strangeluvnative/src/components",
+      "containers": "strangeluvnative/src/containers",
+      "images": "strangeluvnative/src/images",
+      "navigators": "strangeluvnative/src/navigators",
+      "reducers": "strangeluvnative/src/reducers",
+      "screens": "strangeluvnative/src/screens",
+      "static": "strangeluvnative/src/static",
+      "styles": "strangeluvnative/src/styles",
+      "wiring": "strangeluvnative/src/wiring"
+  },
   "dependencies": {
     "babel-cli": "^6.5.1",
     "babel-core": "^6.20.0",

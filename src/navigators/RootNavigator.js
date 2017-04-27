@@ -1,5 +1,5 @@
 const React = require('react');
-const Reducers = require('../wiring/reducers');
+const Reducers = require('wiring/reducers');
 const Connect = require('react-redux').connect;
 const { StackNavigator, addNavigationHelpers } = require('react-navigation');
 const internals = {};
