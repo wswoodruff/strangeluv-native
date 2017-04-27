@@ -23,18 +23,7 @@ module.exports = (store, screens) => {
             tabBarOptions: screens.tabBarOptions,
 
             headerMode: 'screen',
-            navigationOptions: {
-                header: ({ navigate }) => ({
-                    right: (
-                        <Icon
-                            name='menu'
-                            size={24}
-                            style={Styles.menuBtn}
-                            onPress={() => navigate('DrawerOpen')}
-                        />
-                    )
-                })
-            }
+            navigationOptions: {}
         }
     );
 };
