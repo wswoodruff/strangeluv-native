@@ -1,2 +1,2 @@
-const Strangeluv = require('./src');
-Strangeluv('ios');
+const StrangeluvNative = require('./src');
+StrangeluvNative('ios');

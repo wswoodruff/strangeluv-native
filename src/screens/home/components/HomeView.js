@@ -13,6 +13,8 @@ const CounterBtn = MKButton.coloredButton()
     .build();
 
 
+console.log(require('reducers'));
+
 class HomeView extends React.Component {
 
     static navigationOptions = {
@@ -31,7 +33,7 @@ class HomeView extends React.Component {
 
         return (
 
-            <ScrollView style={{ margin: 128 }}>
+            <ScrollView style={{ padding: 128 }}>
 
                 <HomeBtn onPress={() => {
 
