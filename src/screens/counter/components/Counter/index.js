@@ -9,7 +9,7 @@ class Counter extends React.Component {
 
         return (
 
-            <ScrollView style={{ margin: 128 }}>
+            <ScrollView style={{ padding: 128 }}>
                 <Text>Counter:</Text>
                 <Text>{' '}</Text>
                 <Text>{counter}</Text>

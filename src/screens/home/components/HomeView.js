@@ -15,7 +15,7 @@ class HomeView extends React.Component {
         const { navigation } = this.props;
 
         return (
-            <ScrollView style={{ margin: 128 }}>
+            <ScrollView style={{ padding: 128 }}>
 
                 <Text onPress={() => {
 
