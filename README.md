@@ -154,7 +154,7 @@ We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding f
 - [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and 
 - [remote-redux-devtools-on-debugger](https://github.com/jhen0409/remote-redux-devtools-on-debugger)
 
-### Requiring with `./src` as root using `~/`
+#### Requiring with `./src` as root using `~/`
 strangeluv-native uses a babel plugin, [babel-plugin-module-alias](https://github.com/entwicklerstube/babel-plugin-root-import), which I learned about [here](https://github.com/Astrocoders/astroapp-rn-boilerplate/commit/485bc73906f0d008b34d96aa51242ce72913261a)
 to let you do this: `require('~/containers/App');`.
 By prefixing your requires with `~/`, your require resolves to `./src` as root directory.
