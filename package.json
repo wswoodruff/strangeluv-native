@@ -80,6 +80,7 @@
     "babel-eslint": "7.0.0",
     "babel-jest": "16.0.0",
     "babel-plugin-css-modules-transform": "^1.2.7",
+    "babel-plugin-module-alias": "^1.6.0",
     "babel-plugin-module-resolver": "^2.7.0",
     "babel-preset-react-native": "1.9.0",
     "docker": "1.0.0",

@@ -1,9 +1,9 @@
 {
   "presets": ["react-native"],
+  "sourceMaps": true,
   "plugins": [
-      ["babel-plugin-root-import", {
-        "rootPathPrefix": "~",
-        "rootPathSuffix": "src"
-      }]
-    ]
+    ["module-alias", [
+      { "src": "./src", "expose": "~" }
+    ]]
+  ]
 }
