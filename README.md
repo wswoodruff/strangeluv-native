@@ -147,7 +147,12 @@ Omitting the `.js` extension in calls to `require()` is preferred, as it allows 
 We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding for the browser or for react-native!  The idea is to maintain fluency for developers who work both on the server, browser, and in react-native.  It is supposed to be the same language, after all!  Node and V8 move fast enough on their own, so we plan to keep up-to-date with that ecosystem rather than the hyperspeed with which transpilers make available incompletely-spec'd JS features.  It's worth noting that for the time being that includes ES6 modules.  We additionally have some standard React lint rules.  Just `npm run lint` to see how you're doing!
 
 ### Developer Tools
-Does not yet work with the [Redux DevTools Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) nor [React DevTools Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi), but this is in the works!  Issue links, respectively: [Redux DevTools](https://github.com/wswoodruff/strangeluv-native/issues/3) and [React DevTools](https://github.com/wswoodruff/strangeluv-native/issues/4).
+
+- You get Redux dev tools inside react-native's "native" debugger! To enable remote debugging, to open the menu you can shake your device, or press cmd+D in the iOS simulator, and then "Debug JS Remotely". If you've already got it turned on it won't say that.
+
+#### Works with 
+- [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and 
+- [remote-redux-devtools-on-debugger](https://github.com/jhen0409/remote-redux-devtools-on-debugger)
 
 ### Routing
 We use `react-navigation` 
