@@ -6,6 +6,10 @@
   "env": {
     "jest": true
   },
+  "plugins": [
+      "react",
+      "react-native"
+  ],
   "globals": {
     "__DEV__": false,
     "__PROD__": false,
@@ -16,12 +20,23 @@
   "parserOptions": {
     "sourceType": "script",
     "ecmaFeatures": {
-      "impliedStrict": true
+      "impliedStrict": true,
+      "jsx": true
     }
   },
   "rules": {
+    "no-console": 0,
+    "react-native/no-unused-styles": 2,
+    "react-native/split-platform-components": 2,
+    "react-native/no-inline-styles": 2,
+    "react-native/no-color-literals": 2,
     "indent": [2, 4, { "MemberExpression": 0, "SwitchCase": 1 }],
     "react/jsx-indent": [2, 4],
     "react/jsx-indent-props": [2, 4]
+  },
+  "settings": {
+    "import/resolver": {
+        "babel-root-import": {}
+    }
   }
 }

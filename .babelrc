@@ -1,17 +1,9 @@
 {
   "presets": ["react-native"],
   "plugins": [
-    ["module-resolver", {
-      "alias": {
-        "components": "strangeluvnative/src/components",
-        "containers": "strangeluvnative/src/containers",
-        "reducers": "strangeluvnative/src/reducers",
-        "images": "strangeluvnative/src/images",
-        "actions": "strangeluvnative/src/actions",
-        "action-types": "strangeluvnative/src/action-types",
-        "static": "strangeluvnative/src/static",
-        "wiring": "strangeluvnative/src/wiring"
-      }
-    }]
-  ]
+      ["babel-plugin-root-import", {
+        "rootPathPrefix": "~",
+        "rootPathSuffix": "./src"
+      }]
+    ]
 }
