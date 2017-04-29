@@ -15,9 +15,9 @@ const CounterBtn = MKButton.coloredButton()
 class Counter extends React.Component {
 
     static navigationOptions = {
-        tabBar: {
-            icon: () => (<Icon size={24} color='white' name='add' />)
-        }
+        tabBarIcon: () => (
+            <Icon size={24} color='white' name='add' />
+        )
     }
 
     render() {

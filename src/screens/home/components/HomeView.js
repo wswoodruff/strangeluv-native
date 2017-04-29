@@ -16,9 +16,9 @@ const CounterBtn = MKButton.coloredButton()
 class HomeView extends React.Component {
 
     static navigationOptions = {
-        tabBar: {
-            icon: () => (<Icon size={24} color='white' name='home' />)
-        }
+        tabBarIcon: () => (
+            <Icon size={24} color='white' name='home' />
+        )
     }
 
     static propTypes = {
