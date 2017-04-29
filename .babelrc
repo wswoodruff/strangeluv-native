@@ -1,17 +1,19 @@
 {
   "presets": ["react-native"],
+  "sourceMaps": true,
   "plugins": [
-    ["module-resolver", {
-      "alias": {
-        "components": "strangeluvnative/src/components",
-        "containers": "strangeluvnative/src/containers",
-        "reducers": "strangeluvnative/src/reducers",
-        "images": "strangeluvnative/src/images",
-        "actions": "strangeluvnative/src/actions",
-        "action-types": "strangeluvnative/src/action-types",
-        "static": "strangeluvnative/src/static",
-        "wiring": "strangeluvnative/src/wiring"
-      }
-    }]
+    ["module-alias", [
+        { "src": "./src/containers", "expose": "components" },
+        { "src": "./src/containers", "expose": "containers" },
+        { "src": "./src/reducers", "expose": "reducers" },
+        { "src": "./src/images", "expose": "images" },
+        { "src": "./src/actions", "expose": "actions" },
+        { "src": "./src/action-types", "expose": "action-types" },
+        { "src": "./src/static", "expose": "static" },
+        { "src": "./src/screens", "expose": "screens" },
+        { "src": "./src/wiring", "expose": "wiring" },
+        { "src": "./src", "expose": "~" }
+    ]],
+    "transform-postcss"
   ]
 }
