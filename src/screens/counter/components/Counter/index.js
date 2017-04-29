@@ -1,7 +1,16 @@
 const React = require('react');
 const { ScrollView, Text, Button } = require('react-native');
 
+const gStyles = require('styles'); // global styles
+
+let Styles = gStyles.default;
+
 class Counter extends React.Component {
+
+    componentWillReceiveProps({ style }) {
+
+        Styles = gStyles.compose(style || {});
+    }
 
     render() {
 

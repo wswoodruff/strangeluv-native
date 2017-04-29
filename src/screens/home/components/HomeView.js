@@ -1,6 +1,10 @@
 const React = require('react');
 const { ScrollView, Text, Image } = require('react-native');
-const Styles = require('./styles');
+
+const gStyles = require('styles'); // global styles
+const lStyles = require('./styles'); // local styles
+
+const Styles = gStyles.compose(lStyles);
 
 class HomeView extends React.Component {
 
@@ -8,9 +12,16 @@ class HomeView extends React.Component {
         navigation: React.PropTypes.object.isRequired
     };
 
+    componentWillReceiveProps({ style }) {
+
+        Styles = gStyles.compose(style || {}, lStyles);
+    }
+
     render() {
 
         const { navigation } = this.props;
+
+        // Styles = Styles.compose(style, );
 
         return (
             <ScrollView style={{ padding: 128 }}>

@@ -1,5 +1,7 @@
 
-module.exports = {
+const { StyleSheet } = require('react-native');
+
+const gStyles = exports.default = {
 
     title: {
         fontSize: 19,
@@ -14,3 +16,11 @@ module.exports = {
         resizeMode: 'contain'
     }
 };
+
+exports.compose = (...cStyles) => {
+
+    return StyleSheet.create(Object.assign({},
+        gStyles,
+        ...cStyles
+    ))
+}
