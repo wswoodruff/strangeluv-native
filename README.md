@@ -14,7 +14,7 @@ You will need this section, so you might as well read it now.
  - Try this technique: during development keep open 2 terminal windows: one to use `npm run dev` with, and the other
  to use `npm run rc-start`. **Both windows' directories should be in your project's root dir.**
 
-- Got a red sreen? Try these:
+#### Got a red sreen? Try these:
 
 - Run the react-native packager from your app's directory. So `^C` out of the packager process, then cd 'my/project/path', and run `npm run rc-start`. Then reload the simulator, watch the packager's progress, etc.
 - Keep reloading the simulator or shake the phone and hit reload
