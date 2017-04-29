@@ -8,6 +8,10 @@ module.exports = StyleSheet.create({
         textAlign: 'center'
     },
 
+    menuBtn: {
+        padding: 10
+    },
+
     duck: {
         marginTop: 20,
         width: 120,

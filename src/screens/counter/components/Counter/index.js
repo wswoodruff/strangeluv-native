@@ -1,5 +1,5 @@
 const React = require('react');
-const { ScrollView, Text } = require('react-native');
+const { ScrollView, Image, Text, Button } = require('react-native');
 const Icon = require('react-native-vector-icons/MaterialIcons').default;
 const { MKButton } = require('react-native-material-kit');
 
@@ -14,11 +14,21 @@ const CounterBtn = MKButton.coloredButton()
 
 class Counter extends React.Component {
 
-    static navigationOptions = {
-        tabBar: {
-            icon: () => (<Icon size={24} color='white' name='add' />)
-        }
-    }
+    static navigationOptions = ({ navigation }) => ({
+        tabBarIcon: () => (
+            <Icon size={24} color='white' name='add' />
+        ),
+        headerRight: (
+            <Icon
+                name='menu'
+                size={24}
+                style={{
+                    padding: 10
+                }}
+                onPress={() => navigation.navigate('DrawerOpen')}
+            />
+        )
+    });
 
     render() {
 
@@ -38,7 +48,6 @@ class Counter extends React.Component {
                     onPress={doubleAsync}
                 />
             </ScrollView>
-
         );
     }
 }
