@@ -19,6 +19,7 @@ You will need this section, so you might as well read it now.
 - Refresh the simulator or shake the phone and hit reload
 - Quit the react-native packager terminal window, cd into your project's root dir and run `npm run rc-start`. and keep hitting reload on your simulator or device.
 - Run  `$ npm run clean`
+- `Repeat!` Seriously - keep repeating these, things will eventually work, if not then please open an issue!
  ---
  `$ npm run rc-start` starts react-native's packager while clearing it's cache. It's very important to clear the cache for react-native's packager on a regular basis, as well as any other cache you ever come across while programming. Especially if you've been switching projects.
  
