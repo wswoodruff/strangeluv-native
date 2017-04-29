@@ -7,10 +7,25 @@
 - `routes` in react-web are now referred to as `screens`.
 - Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
 
-## Recipes
-In case you want to jump right into it, these recipes are example apps
-integrating various popular libraries and navigation configurations:
-[#Recipes](#recipes)
+### Troubleshooting: TL;DR is in first bullet
+
+You will need this section, so you might as well read it now.
+
+ - Try this technique: during development keep open 2 terminal windows: one to use `npm run dev` with, and the other
+ to use `npm run rc-start`. Both windows' directories should be in your project's root dir.
+
+- Got a red sreen? Try these:
+
+- Refresh the simulator or shake the phone and hit reload
+- Quit the react-native packager terminal window, cd into your project's root dir.
+- `npm run rc-start` - run that, let it go through and wait for the simulator, then exit. Then use `npm run dev` to open the simulator for you. Keep hitting reload on your simulator or device.
+- `$ npm run clean` will clean watchman's cache. This fixes problems often.
+- `$ rm -rf node_modules && npm install`
+- `$ npm run fresh-install` removes your iOS build, removes node_modules, clears caches, and runs `npm install`
+- _Double check and make sure your packager terminal's cwd is your project root_
+- `Repeat!` Seriously - keep repeating these, things will eventually work, if not then please open an issue!
+- `$ npm run rc-start` starts react-native's packager while clearing it's cache. It's very important to clear the cache for react-native's packager on a regular basis, as well as any other cache you ever come across while programming. Especially if you've been switching projects.
+
 
 ## > How I Learned to Stop Worrying and Love _React Native_
 
