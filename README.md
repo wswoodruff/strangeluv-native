@@ -7,10 +7,23 @@
 - `routes` in react-web are now referred to as `screens`.
 - Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
 
-## Recipes
-In case you want to jump right into it, these recipes are example apps
-integrating various popular libraries and navigation configurations:
-[#Recipes](#recipes)
+# Troubleshooting: TL;DR is in first bullet
+
+You will need this section, so you might as well read it now.
+
+ - Try this technique: during development keep open 2 terminal windows: one to use `npm run dev` with, and the other
+ to use `npm run rc-start`. Both windows' directories should be in your project's root dir.
+
+- Got a red sreen? Try these:
+
+- Refresh the simulator or shake the phone and hit reload
+- Quit the react-native packager terminal window, cd into your project's root dir and run `npm run rc-start`. and keep hitting reload on your simulator or device.
+- Run  `$ npm run clean`
+ ---
+ `$ npm run rc-start` starts react-native's packager while clearing it's cache. It's very important to clear the cache for react-native's packager on a regular basis, as well as any other cache you ever come across while programming. Especially if you've been switching projects.
+ 
+`$ npm run clean` will clean watchman's cache. This fixes problems often.
+
 
 ## > How I Learned to Stop Worrying and Love _React Native_
 
