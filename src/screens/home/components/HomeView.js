@@ -14,6 +14,7 @@ class HomeView extends React.Component {
 
     componentWillReceiveProps({ style }) {
 
+        // Compose passed-in style
         Styles = gStyles.compose(style || {}, lStyles);
     }
 
