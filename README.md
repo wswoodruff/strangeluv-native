@@ -21,6 +21,7 @@ You will need this section, so you might as well read it now.
 - `npm run rc-start` - run that, let it go through and wait for the simulator, then exit. Then use `npm run dev` to open the simulator for you. Keep hitting reload on your simulator or device.
 - `$ npm run clean` will clean watchman's cache. This fixes problems often.
 - `$ rm -rf node_modules && npm install`
+- `$ npm run fresh-install` removes your iOS build, removes node_modules, clears caches, and runs `npm install`
 - `Repeat!` Seriously - keep repeating these, things will eventually work, if not then please open an issue!
 - `$ npm run rc-start` starts react-native's packager while clearing it's cache. It's very important to clear the cache for react-native's packager on a regular basis, as well as any other cache you ever come across while programming. Especially if you've been switching projects.
 
