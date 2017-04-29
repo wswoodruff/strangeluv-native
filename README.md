@@ -25,7 +25,9 @@ You will need this section, so you might as well read it now.
 - `$ npm run fresh-install` removes your iOS build, removes node_modules, clears caches, and runs `npm install`
 - _Double check and make sure your packager terminal's cwd is your project root_
 - `Repeat!` Seriously - keep repeating these, things will eventually work, if not then please open an issue!
-- `$ npm run rc-start` starts react-native's packager while clearing it's cache. It's very important to clear the cache for react-native's packager on a regular basis, as well as any other cache you ever come across while programming. Especially if you've been switching projects.
+- `$ npm run rc-start` starts react-native's packager while clearing it's cache.
+- `$ npm run clean` clears watchman cache, and other cache related to react-native.
+- It's very important to clear the cache for react-native's packager and watchman on a regular basis, as well as any other cache you ever come across while programming. Especially if you've been switching projects :+1:!
 
 
 ## > How I Learned to Stop Worrying and Love _React Native_
