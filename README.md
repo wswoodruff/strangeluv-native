@@ -7,7 +7,7 @@
 - `routes` in react-web are now referred to as `screens`.
 - Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
 
-# Troubleshooting: TL;DR is in first bullet
+### Troubleshooting: TL;DR is in first bullet
 
 You will need this section, so you might as well read it now.
 
