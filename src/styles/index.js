@@ -17,10 +17,10 @@ const gStyles = exports.default = {
     }
 };
 
-exports.compose = (...cStyles) => {
+exports.compose = (...stylesToCompose) => {
 
     return StyleSheet.create(Object.assign({},
         gStyles,
-        ...cStyles
+        ...stylesToCompose
     ))
 }
