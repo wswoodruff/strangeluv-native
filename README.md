@@ -7,10 +7,28 @@
 - `routes` in react-web are now referred to as `screens`.
 - Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
 
-## Recipes
-In case you want to jump right into it, these recipes are example apps
-integrating various popular libraries and navigation configurations:
-[#Recipes](#recipes)
+### Troubleshooting: TL;DR is in first bullet
+
+You will need this section, so you might as well read it now.
+
+ - Try this technique: during development keep open 2 terminal windows: one to use `npm run dev` with, and the other
+ to use `npm run rc-start`. **Both windows' directories should be in your project's root dir.**
+
+#### Got a red sreen? Try these:
+
+- Run the react-native packager from your app's directory. So `^C` out of the packager process, then cd 'my/project/path', and run `npm run rc-start`. Then reload the simulator, watch the packager's progress, etc.
+- Keep reloading the simulator or shake the phone and hit reload
+- Quit the react-native packager terminal window, cd into your project's root dir.
+- `npm run rc-start` - run that, let it go through and wait for the simulator, then exit. Then use `npm run dev` to open the simulator for you. Keep hitting reload on your simulator or device.
+- `$ npm run clean` will clean watchman's cache. This fixes problems often.
+- `$ rm -rf node_modules && npm install`
+- `$ npm run fresh-install` removes your iOS build, removes node_modules, clears caches, and runs `npm install`
+- _Double check and make sure your packager terminal's cwd is your project root_
+- `Repeat!` Seriously - keep repeating these, things will eventually work, if not then please open an issue!
+- `$ npm run rc-start` starts react-native's packager while clearing it's cache.
+- `$ npm run clean` clears watchman cache, and other cache related to react-native.
+- It's very important to clear the cache for react-native's packager and watchman on a regular basis, as well as any other cache you ever come across while programming. Especially if you've been switching projects :+1:!
+
 
 ## > How I Learned to Stop Worrying and Love _React Native_
 
@@ -147,7 +165,19 @@ Omitting the `.js` extension in calls to `require()` is preferred, as it allows 
 We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding for the browser or for react-native!  The idea is to maintain fluency for developers who work both on the server, browser, and in react-native.  It is supposed to be the same language, after all!  Node and V8 move fast enough on their own, so we plan to keep up-to-date with that ecosystem rather than the hyperspeed with which transpilers make available incompletely-spec'd JS features.  It's worth noting that for the time being that includes ES6 modules.  We additionally have some standard React lint rules.  Just `npm run lint` to see how you're doing!
 
 ### Developer Tools
-Does not yet work with the [Redux DevTools Chrome Extension](https://chrome.google.com/webstore/detail/redux-devtools/lmhkpmbekcpmknklioeibfkpmmfibljd) nor [React DevTools Chrome Extension](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi), but this is in the works!  Issue links, respectively: [Redux DevTools](https://github.com/wswoodruff/strangeluv-native/issues/3) and [React DevTools](https://github.com/wswoodruff/strangeluv-native/issues/4).
+
+- You get Redux dev tools inside react-native's "native" debugger! To enable remote debugging, to open the menu you can shake your device, or press cmd+D in the iOS simulator, and then "Debug JS Remotely". If you've already got it turned on it won't say that.
+
+#### Works with 
+- [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and 
+- [remote-redux-devtools-on-debugger](https://github.com/jhen0409/remote-redux-devtools-on-debugger)
+
+#### Requiring with `./src` as root using `~/`
+strangeluv-native uses a babel plugin, [babel-plugin-module-alias](https://github.com/entwicklerstube/babel-plugin-root-import), which I learned about [here](https://github.com/Astrocoders/astroapp-rn-boilerplate/commit/485bc73906f0d008b34d96aa51242ce72913261a)
+to let you do this: `require('~/containers/App');`.
+By prefixing your requires with `~/`, your require resolves to `./src` as root directory.
+
+These 2 things can be customized in `.babelrc`. You could set `"expose": "@"` and do requires like `require('@/my-file');`. I chose `~/` cuz that was the default, and the tilde is associated with home on comps. If you don't want to use it, _then just don't put ~/ in your requires ya dingus!_ :steve-brule: :for-your-health:
 
 ### Routing
 We use `react-navigation` 
