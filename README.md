@@ -12,11 +12,12 @@
 You will need this section, so you might as well read it now.
 
  - Try this technique: during development keep open 2 terminal windows: one to use `npm run dev` with, and the other
- to use `npm run rc-start`. Both windows' directories should be in your project's root dir.
+ to use `npm run rc-start`. **Both windows' directories should be in your project's root dir.**
 
 - Got a red sreen? Try these:
 
-- Refresh the simulator or shake the phone and hit reload
+- Run the react-native packager from your app's directory. So `^C` out of the packager process, then cd 'my/project/path', and run `npm run rc-start`. Then reload the simulator, watch the packager's progress, etc.
+- Keep reloading the simulator or shake the phone and hit reload
 - Quit the react-native packager terminal window, cd into your project's root dir.
 - `npm run rc-start` - run that, let it go through and wait for the simulator, then exit. Then use `npm run dev` to open the simulator for you. Keep hitting reload on your simulator or device.
 - `$ npm run clean` will clean watchman's cache. This fixes problems often.
