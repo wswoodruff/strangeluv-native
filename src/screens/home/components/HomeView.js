@@ -10,17 +10,9 @@ class HomeView extends React.Component {
         navigation: React.PropTypes.object.isRequired
     };
 
-    componentWillReceiveProps({ style }) {
-
-        // Compose passed-in style
-        Styles = gStyles.compose(style || {}, lStyles);
-    }
-
     render() {
 
         const { navigation, styles } = this.props;
-
-        // Styles = Styles.compose(style, );
 
         return (
             <ScrollView style={{ padding: 128 }}>
