@@ -171,6 +171,8 @@ Local styles get the last say in everything. Whatever you require as `lStyles` i
 
 Let's test this. Go in `src/screens/home/components/styles.js` and comment out the `width` and `height` props. The global styles are setting the duck to a larger size. So if you comment these out, you should be able to refresh and see a larger duck on the homepage.
 
+- the File `src/screens/.stylishComponent.js` should serve as a good template for creating a new component that's `connected` with cascading styles.
+
 ## Development
 ### Code Style
 We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding for the browser or for react-native!  The idea is to maintain fluency for developers who work both on the server, browser, and in react-native.  It is supposed to be the same language, after all!  Node and V8 move fast enough on their own, so we plan to keep up-to-date with that ecosystem rather than the hyperspeed with which transpilers make available incompletely-spec'd JS features.  It's worth noting that for the time being that includes ES6 modules.  We additionally have some standard React lint rules.  Just `npm run lint` to see how you're doing!
