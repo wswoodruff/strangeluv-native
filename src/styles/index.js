@@ -16,6 +16,13 @@ const gStyles = exports.default = {
 
 };
 
+if (module.hot) {
+    module.hot.accept(() => {
+        // const nextRootReducer = require('../reducers/index').default;
+        // store.replaceReducer(nextRootReducer);
+    });
+}
+
 exports.compose = (...stylesToCompose) => {
 
     return StyleSheet.create(Object.assign({},
@@ -28,7 +35,7 @@ exports.addStyleHelpers = (Component, ...stylesToCompose) => {
 
     let hocStyles = exports.compose(...stylesToCompose);
 
-    return class StylishComponent extends React.Component {
+    return class StylishComponent extends React.PureComponent {
 
         componentWillReceiveProps({ style }) {
 
