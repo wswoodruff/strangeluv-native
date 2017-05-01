@@ -183,6 +183,7 @@ We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding f
 #### Works with 
 - [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and 
 - [remote-redux-devtools-on-debugger](https://github.com/jhen0409/remote-redux-devtools-on-debugger)
+- HMR support for reducers! Your reducers will update without reloading if you've enabled hot module reloading.
 
 #### Requiring with `./src` as root
 You can require the top-level folders like `require(containers/App);` because of the setup in `.babelrc`.
@@ -209,8 +210,6 @@ npm run fresh-start
 ```
 
 ## Deployment
-### For development (`npm run dev`)
-Runs a react-native Packager build with HMR _currently for views only_.
 
 ### For production
 This article, [First Time Deploying With React Native](https://medium.com/the-react-native-log/first-time-deploying-with-react-native-f524eb3e705d) seems interesting, I haven't tried it yet though. I will update this section soon after I do it myself.
