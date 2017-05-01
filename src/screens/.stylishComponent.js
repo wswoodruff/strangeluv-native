@@ -4,7 +4,7 @@ const { View, Text } = require('react-native');
 const gStyles = require('styles'); // global styles
 // const lStyles = require('./styles'); // local styles
 
-class HomeView extends React.Component {
+class Stylish extends React.Component {
 
     static propTypes = {
         style: React.PropTypes.object.isRequired
@@ -22,5 +22,5 @@ class HomeView extends React.Component {
     }
 }
 
-module.exports = gStyles.addStyleHelpers(HomeView);
-// module.exports = gStyles.addStyleHelpers(HomeView, lStyles);
+module.exports = gStyles.addStyleHelpers(Stylish);
+// module.exports = gStyles.addStyleHelpers(Stylish, lStyles);
