@@ -12,7 +12,7 @@ class HomeView extends React.Component {
 
     render() {
 
-        const { navigation, styles } = this.props;
+        const { navigation, style } = this.props;
 
         return (
             <ScrollView style={{ padding: 128 }}>
@@ -26,9 +26,9 @@ class HomeView extends React.Component {
                     navigation.navigate('Counter');
                 }}>Counter</Text>
 
-                <Text style={styles.title}>Welcome!</Text>
+                <Text style={style.title}>Welcome!</Text>
                 <Image
-                    style={styles.duck}
+                    style={style.duck}
                     source={require('../assets/duck.jpg')}
                 />
             </ScrollView>

@@ -7,26 +7,24 @@ class Counter extends React.Component {
 
     render() {
 
-        const { counter, increment, doubleAsync, styles } = this.props;
-
-        console.log(styles);
+        const { counter, increment, doubleAsync, style } = this.props;
 
         return (
 
             <ScrollView style={{ padding: 128 }}>
-                <Text style={styles.title}>Counter:</Text>
+                <Text style={style.title}>Counter:</Text>
                 <Text>{' '}</Text>
                 <Text>{counter}</Text>
                 <Button
                     onPress={increment}
                     title='Increment'
-                    style={styles.button}
+                    style={style.button}
                 />
                 <Text>{' '}</Text>
                 <Button
                     onPress={doubleAsync}
                     title='Double (Async)'
-                    style={styles.button}
+                    style={style.button}
                 />
             </ScrollView>
 

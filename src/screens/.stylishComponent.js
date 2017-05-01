@@ -7,16 +7,16 @@ const gStyles = require('styles'); // global styles
 class HomeView extends React.Component {
 
     static propTypes = {
-        styles: React.PropTypes.object.isRequired
+        style: React.PropTypes.object.isRequired
     };
 
     render() {
 
-        const { navigation, styles } = this.props;
+        const { navigation, style } = this.props;
 
         return (
             <ScrollView style={{ padding: 128 }}>
-                <Text style={styles.title}>Welcome!</Text>
+                <Text style={style.title}>Welcome!</Text>
             </ScrollView>
         );
     }

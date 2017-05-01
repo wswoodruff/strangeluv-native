@@ -30,13 +30,13 @@ exports.addStyleHelpers = (Component, ...stylesToCompose) => {
 
     return class StylishComponent extends React.Component {
 
-        componentWillReceiveProps({ styles }) {
+        componentWillReceiveProps({ style }) {
 
-            hocStyles = exports.compose(styles || {}, ...stylesToCompose);
+            hocStyles = exports.compose(style || {}, ...stylesToCompose);
         }
         render() {
 
-            return <Component {...this.props} styles={hocStyles} />;
+            return <Component {...this.props} style={hocStyles} />;
         }
     }
 }
