@@ -3,7 +3,7 @@
   "sourceMaps": true,
   "plugins": [
     ["module-alias", [
-        { "src": "./src/containers", "expose": "components" },
+        { "src": "./src/components", "expose": "components" },
         { "src": "./src/containers", "expose": "containers" },
         { "src": "./src/reducers", "expose": "reducers" },
         { "src": "./src/images", "expose": "images" },
