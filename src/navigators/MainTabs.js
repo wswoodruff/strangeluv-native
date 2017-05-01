@@ -3,12 +3,7 @@ const { StyleSheet } = require('react-native');
 const { TabNavigator } = require('react-navigation');
 const { NavigationComponent } = require('react-native-material-bottom-navigation');
 const Icon = require('react-native-vector-icons/MaterialIcons').default;
-
-const Styles = StyleSheet.create({
-    menuBtn: {
-        marginRight: 12
-    }
-});
+const style = StyleSheet.create(require('styles').default);
 
 module.exports = (store, screens) => {
 
@@ -22,7 +17,18 @@ module.exports = (store, screens) => {
             tabBarPosition: 'bottom',
             tabBarOptions: screens.tabBarOptions,
             headerMode: 'screen',
-            navigationOptions: {}
+            navigationOptions: ({ navigation }) => {
+                return {
+                    headerRight: (
+                        <Icon
+                            name='menu'
+                            size={24}
+                            style={style.menuBtn}
+                            onPress={() => navigation.navigate('DrawerOpen')}
+                        />
+                    )
+                }
+            }
         }
     );
 };

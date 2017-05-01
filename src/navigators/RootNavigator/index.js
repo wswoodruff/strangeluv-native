@@ -1,16 +1,9 @@
 const React = require('react');
 const Reducers = require('wiring/reducers');
 const Connect = require('react-redux').connect;
-const { StyleSheet } = require('react-native');
 const { DrawerNavigator, addNavigationHelpers } = require('react-navigation');
 const DrawerComponent = require('./DrawerComponent');
 const MainStack = require('../MainStack');
-
-const Styles = StyleSheet.create({
-    menuBtn: {
-        marginRight: 12
-    }
-});
 
 const internals = {};
 
@@ -34,7 +27,6 @@ module.exports = (store) => {
     // Screens returns { routeConfig, initialRouteName }
 
     const AppNavigator = DrawerNavigator(
-
         {
             Main: { screen: MainStack(store, Screens) }
         },

@@ -12,8 +12,10 @@ const gStyles = exports.default = {
     duck: {
         height: 320,
         width: 320
+    },
+    menuBtn: {
+        marginRight: 12
     }
-
 };
 
 exports.compose = (...stylesToCompose) => {

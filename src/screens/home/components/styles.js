@@ -1,5 +1,10 @@
-
 module.exports = {
+
+    title: {
+        fontSize: 19,
+        fontWeight: 'bold',
+        textAlign: 'center'
+    },
 
     menuBtn: {
         padding: 10

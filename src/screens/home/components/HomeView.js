@@ -16,22 +16,9 @@ const lStyles = require('./styles'); // local styles
 
 class HomeView extends React.Component {
 
-    static navigationOptions = ({ navigation }) => ({
-        tabBarIcon: () => (
-            <Icon size={24} color='white' name='home' />
-        ),
-        headerRight: (
-            <Icon
-                name='menu'
-                size={24}
-                style={Styles.menuBtn}
-                onPress={() => navigation.navigate('DrawerOpen')}
-            />
-        )
-    });
-
     static propTypes = {
-        navigation: React.PropTypes.object.isRequired
+        navigation: React.PropTypes.object.isRequired,
+        style: React.PropTypes.object.isRequired
     };
 
     render() {
@@ -51,7 +38,7 @@ class HomeView extends React.Component {
 
                     navigation.navigate('Counter');
                 }} />
-                
+
                 <Text style={style.title}>Welcome!</Text>
                 <Image
                     style={style.duck}

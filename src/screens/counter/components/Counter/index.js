@@ -15,22 +15,6 @@ const gStyles = require('styles'); // global styles
 
 class Counter extends React.Component {
 
-    static navigationOptions = ({ navigation }) => ({
-        tabBarIcon: () => (
-            <Icon size={24} color='white' name='add' />
-        ),
-        headerRight: (
-            <Icon
-                name='menu'
-                size={24}
-                style={{
-                    padding: 10
-                }}
-                onPress={() => navigation.navigate('DrawerOpen')}
-            />
-        )
-    });
-
     render() {
 
         const { counter, increment, doubleAsync, style } = this.props;
