@@ -76,19 +76,10 @@ $ grep -e 'strangeluvnative' -rl . | xargs sed -i '' 's/strangeluvnative/mynewpr
 
 Now inside your `ios` folder, make sure all of the top-level files and folders match your project's name.
 
-If you've worked on another react-native project, you may need to clear your watchman cache,
-and you may be met with a red screen.
+-- Side note, you'll almost certainly see a red screen at some point during this setup. The troubleshooting section is near the top
 
-If you've been working on other react-native projects, do these steps:
+Now launch :rocket:!
 ```bash
-# If you ran npm install by this point, go ahead and rm -rf node_modules
-$ watchman watch-del-all
-$ rm -fr $TMPDIR/react-*
-```
-
-Now launch!
-```bash
-# Side note, you'll almost certainly see a red screen at some point during this setup.
 $ npm install     # Install project dependencies
 $ npm run dev     # Compile and launch to iOS simulator
 ```
@@ -152,7 +143,7 @@ Reducers.inject(store, { key: 'reducerName', reducer: myReducer });
 ```
 You can find an implementation of an async reducer in the [app's navigator](https://github.com/wswoodruff/strangeluv-native/blob/master/src/navigators/AppNavigator.js)
 
-### Style Guide: A note on file- and directory-naming
+### Code Style Guide: A note on file- and directory-naming
 Files should be named with `dash-case.js` except in the case of containers or components, which should use `PascalCase.js`.  This includes reducer, action, and action-type files.  Filenames need not repeat information specified by their directory names.  For example, `containers/Counter.js` or `containers/Counter/index.js` are preferred over `containers/CounterContainer.js` or `containers/CounterContainer/CounterContainer.js`.  The container may still be required into a file using the "full name" e.g.,
 ```js
 const CounterContainer = require('./containers/Counter');
@@ -161,12 +152,11 @@ const CounterContainer = require('./containers/Counter');
 Omitting the `.js` extension in calls to `require()` is preferred, as it allows one to transition a simple module at `components/Counter.js` to a complex module with its own internals at `components/Counter/index.js` without affecting how it is referenced.
 
 ## Development
-### Style
+### Code Style
 We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding for the browser or for react-native!  The idea is to maintain fluency for developers who work both on the server, browser, and in react-native.  It is supposed to be the same language, after all!  Node and V8 move fast enough on their own, so we plan to keep up-to-date with that ecosystem rather than the hyperspeed with which transpilers make available incompletely-spec'd JS features.  It's worth noting that for the time being that includes ES6 modules.  We additionally have some standard React lint rules.  Just `npm run lint` to see how you're doing!
 
 ### Developer Tools
-
-- You get Redux dev tools inside react-native's "native" debugger! To enable remote debugging, to open the menu you can shake your device, or press cmd+D in the iOS simulator, and then "Debug JS Remotely". If you've already got it turned on it won't say that.
+- You get Redux dev tools inside react-native's "native" debugger! To enable remote debugging, open the menu once inside the app via Cmd+D, etc. and hit "Debug JS Remotely".
 
 #### Works with 
 - [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and 
@@ -188,24 +178,24 @@ to define units of logic within our application. See the [application structure]
 
 ## Recipes
  - branch [`recipe-react-native-material-bottom-navigation`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)  integrating [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation)
+
  - branch [`recipe-drawer`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer) integrating [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-native
-  - branch [`recipe-react-native-material-kit`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-kit) integrating [react-native-material-kit](https://github.com/xinthink/react-native-material-kit)
--- After merging `recipe-react-native-material-kit`, you'll want to
-  ```
-  npm install
-  react-native link react-native-material-kit
-  ```
-  - branch [`recipe-drawer-material-kit-bottom-navigation`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer-material-kit-bottom-navigation) integrating the `trifecta` of components used in the above recipes: drawer, react-native-material-kit, and react-native-material-bottom-navigation.
+
+ - branch [`recipe-react-native-material-kit`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-kit) integrating [react-native-material-kit](https://github.com/xinthink/react-native-material-kit)
+
+ - branch [`recipe-drawer-material-kit-bottom-navigation`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer-material-kit-bottom-navigation) integrating the `trifecta` of components used in the above recipes: drawer, react-native-material-kit, and react-native-material-bottom-navigation.
+
+-- After merging each of these, you'll want to run an npm script:
+```bash
+npm run fresh-start
+```
 
 ## Deployment
 ### For development (`npm run dev`)
 Runs a react-native Packager build with HMR _currently for views only_.
 
 ### For production
-This article, [First Time Deploying With React Native](https://medium.com/the-react-native-log/first-time-deploying-with-react-native-f524eb3e705d) seems interesting, I haven't tried it yet though.
-
-### Styles
-Styles are currently done using .js files, with react-native [StyleSheet](https://facebook.github.io/react-native/docs/stylesheet.html) settings.
+This article, [First Time Deploying With React Native](https://medium.com/the-react-native-log/first-time-deploying-with-react-native-f524eb3e705d) seems interesting, I haven't tried it yet though. I will update this section soon after I do it myself.
 
 ## Thank You
 * [Bigroom Studios](https://github.com/BigRoomStudios), [Devin Ivy](https://github.com/devinivy) and contributors - for creating [strangeluv](https://github.com/BigRoomStudios/strangeluv)
