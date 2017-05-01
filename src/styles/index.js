@@ -33,6 +33,8 @@ exports.addStyleHelpers = (Component, ...stylesToCompose) => {
         componentWillReceiveProps({ style }) {
 
             hocStyles = exports.compose(style || {}, ...stylesToCompose);
+            // To give passed-in styles the last say in style cascading:
+            // hocStyles = exports.compose(...stylesToCompose, style || {});
         }
         render() {
 
