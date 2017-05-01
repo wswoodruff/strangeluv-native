@@ -1,6 +1,5 @@
 const React = require('react');
 const { ScrollView, Text, Image } = require('react-native');
-const Styles = require('./styles');
 const Icon = require('react-native-vector-icons/MaterialIcons').default;
 const { MKButton } = require('react-native-material-kit');
 
@@ -12,6 +11,8 @@ const CounterBtn = MKButton.coloredButton()
     .withText('Counter')
     .build();
 
+const gStyles = require('styles'); // global styles
+const lStyles = require('./styles'); // local styles
 
 class HomeView extends React.Component {
 
@@ -35,7 +36,7 @@ class HomeView extends React.Component {
 
     render() {
 
-        const { navigation } = this.props;
+        const { navigation, style } = this.props;
 
         return (
 
@@ -50,10 +51,10 @@ class HomeView extends React.Component {
 
                     navigation.navigate('Counter');
                 }} />
-
-                <Text style={Styles.title}>Welcome!</Text>
+                
+                <Text style={style.title}>Welcome!</Text>
                 <Image
-                    style={Styles.duck}
+                    style={style.duck}
                     source={require('../assets/duck.jpg')}
                 />
             </ScrollView>
@@ -61,4 +62,4 @@ class HomeView extends React.Component {
     }
 }
 
-module.exports = HomeView;
+module.exports = gStyles.addStyleHelpers(HomeView, lStyles);

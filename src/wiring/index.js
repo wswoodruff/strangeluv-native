@@ -1,12 +1,24 @@
+
+const wiringReducers = require('./reducers');
+
 module.exports = (store) => {
 
-    // Currently does not work
-    // if (module.hot) {
-    //     module.hot.accept(() => {
+    if (module.hot) {
+        module.hot.accept(() => {
 
-    //         store.replaceReducer(require('../reducers')(AppNavigator));
-    //     });
-    // }
+            const updatedReducers = require('reducers');
 
-    return require('../reducers');
+            Object.keys(updatedReducers).forEach((key) => {
+
+                const hotReducer = updatedReducers[key];
+                const injectVal = {};
+                injectVal.key = key;
+                injectVal.reducer = hotReducer;
+
+                wiringReducers.inject(store, injectVal);
+            });
+        });
+    }
+
+    return require('reducers');
 };

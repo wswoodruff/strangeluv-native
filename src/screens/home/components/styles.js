@@ -1,12 +1,5 @@
-const { StyleSheet } = require('react-native');
 
-module.exports = StyleSheet.create({
-
-    title: {
-        fontSize: 19,
-        fontWeight: 'bold',
-        textAlign: 'center'
-    },
+module.exports = {
 
     menuBtn: {
         padding: 10
@@ -18,4 +11,4 @@ module.exports = StyleSheet.create({
         height: 120,
         resizeMode: 'contain'
     }
-});
+};
