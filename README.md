@@ -39,6 +39,7 @@ Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) Rea
 1. [Requirements](#requirements)
 1. [Getting Started](#getting-started)
 1. [Application Structure](#application-structure)
+1. [Styling](#styling)
 1. [Development](#development)
 1. [Recipes](#recipes)
 1. [Thank You](#thank-you)
@@ -150,6 +151,25 @@ const CounterContainer = require('./containers/Counter');
 ```
 
 Omitting the `.js` extension in calls to `require()` is preferred, as it allows one to transition a simple module at `components/Counter.js` to a complex module with its own internals at `components/Counter/index.js` without affecting how it is referenced.
+
+## Styling
+### Styles composition with `src/styles/index.js`
+The exports of styles/index.js are:
+```
+{
+    default, // global styles for the app
+    compose, // helper function, returns global styles composed with passed in arguments.
+    addStyleHelpers // hoc (Higher Order Component) to facilitate styles inheritance, and keep styles updated if the styles prop changes.
+}
+```
+- Please see [src/screens/home/components/HomeView.js](https://github.com/wswoodruff/strangeluv-native/blob/master/src/screens/home/components/HomeView.js)
+   - gStyles is `global styles`, lStyles is `local styles`. `gStyles.addStyleHelpers` ensures that the `styles` prop is passed to this component. The `styles` prop will be a composition of styles in this cascade order:
+```
+global styles -> passed-in styles from parent via styles prop -> local styles
+```
+Local styles get the last say in everything. Whatever you require as `lStyles` in HomeView.js's case, will get the last say.
+
+Let's test this. Go in `src/screens/home/components/styles.js` and comment out the `width` and `height` props. The global styles are setting the duck to a larger size. So if you comment these out, you should be able to refresh and see a larger duck on the homepage.
 
 ## Development
 ### Code Style
