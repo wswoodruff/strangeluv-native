@@ -1,6 +1,6 @@
 const React = require('react');
 const { ScrollView, Text, Image } = require('react-native');
-const { RectRipple } = require('material-native');
+const { CoreRipple } = require('material-native');
 
 const gStyles = require('styles'); // global styles
 const lStyles = require('./styles'); // local styles
@@ -18,25 +18,31 @@ class HomeView extends React.Component {
         return (
             <ScrollView style={{ padding: 128 }}>
 
-                <RectRipple
-                    style={style.rect}
+                <CoreRipple
+                    accent
+                    shadowAniEnabled
+                    maskBorderRadius={3}
+                    style={style.primaryBtn}
                     onPress={() => {
 
                         navigation.navigate('Home');
                     }}
                 >
 					<Text style={style.text}>Home</Text>
-				</RectRipple>
+				</CoreRipple>
                 <Text>{' '}</Text>
-                <RectRipple
-                    style={style.rect}
+                <CoreRipple
+                    accent
+                    shadowAniEnabled
+                    maskBorderRadius={3}
+                    style={style.primaryBtn}
                     onPress={() => {
 
                         navigation.navigate('Counter');
                     }}
                 >
 					<Text style={style.text}>Counter</Text>
-				</RectRipple>
+				</CoreRipple>
 
                 <Text style={style.title}>Welcome!</Text>
                 <Image

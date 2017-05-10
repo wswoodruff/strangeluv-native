@@ -5,8 +5,8 @@ const { colors, shades, typo, getMaterialTheme } = require('material-native');
 
 exports.materialTheme = getMaterialTheme({
     theme: 'light',
-    primary: colors.amber500,
-    lightPrimary: 'blue',
+    primary: colors.lightBlue400,
+    accent: 'white'
 });
 
 const gStyles = exports.default = {
@@ -20,16 +20,26 @@ const gStyles = exports.default = {
         height: 320,
         width: 320
     },
+    primaryBtn: {
+        shadowColor: 'rgba(0, 0, 0, 0.35)',
+        shadowOpacity: 1,
+        shadowRadius: 2,
+        shadowOffset: {
+            height: 1,
+            width: 2,
+        },
 
-    text: {
-        ...typo.body1,
-        paddingTop: 5,
-        color: 'blue'
-    },
-    rect: {
-        backgroundColor: colors.amber500,
+        marginVertical: 4,
+        borderRadius: 3,
+        backgroundColor: colors.lightBlue400,
         paddingHorizontal: 16,
         alignItems: 'center'
+    },
+    text: {
+        ...typo.body1,
+        paddingVertical: 6,
+        fontWeight: 'bold',
+        color: 'white'
     }
 };
 

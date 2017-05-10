@@ -1,6 +1,6 @@
 const React = require('react');
 const { ScrollView, Text, Button } = require('react-native');
-const { RectRipple } = require('material-native');
+const { CoreRipple } = require('material-native');
 
 
 const gStyles = require('styles'); // global styles
@@ -18,20 +18,26 @@ class Counter extends React.Component {
                 <Text style={style.title}>Counter:</Text>
                 <Text>{' '}</Text>
                 <Text>{counter}</Text>
-
-                <RectRipple
-                    style={style.rect}
+                
+                <CoreRipple
+                    accent
+                    shadowAniEnabled
+                    maskBorderRadius={3}
+                    style={style.primaryBtn}
                     onPress={increment}
                 >
 					<Text style={style.text}>Increment</Text>
-				</RectRipple>
+				</CoreRipple>
                 <Text>{' '}</Text>
-                <RectRipple
-                    style={style.rect}
+                <CoreRipple
+                    accent
+                    shadowAniEnabled
+                    maskBorderRadius={3}
+                    style={style.primaryBtn}
                     onPress={doubleAsync}
                 >
 					<Text style={style.text}>Double (Async)</Text>
-				</RectRipple>
+				</CoreRipple>
             </ScrollView>
         );
     }
