@@ -1,7 +1,13 @@
 
 const React = require('react');
 const { StyleSheet } = require('react-native');
-const { colors, shades, typo } = require('material-native');
+const { colors, shades, typo, getMaterialTheme } = require('material-native');
+
+exports.materialTheme = getMaterialTheme({
+    theme: 'light',
+    primary: colors.blue500,
+    darkPrimary: colors.blue700,
+});
 
 const gStyles = exports.default = {
 
@@ -21,18 +27,20 @@ const gStyles = exports.default = {
     },
     rect: {
         height: 48,
+        backgroundColor: colors.amber500,
         paddingHorizontal: 16,
         alignItems: 'center',
         justifyContent: 'center'
     }
 };
 
-if (module.hot) {
-    module.hot.accept(() => {
-        // const nextRootReducer = require('../reducers/index').default;
-        // store.replaceReducer(nextRootReducer);
-    });
-}
+//
+// if (module.hot) {
+//     module.hot.accept(() => {
+//         // const nextRootReducer = require('../reducers/index').default;
+//         // store.replaceReducer(nextRootReducer);
+//     });
+// }
 
 exports.compose = (...stylesToCompose) => {
 
