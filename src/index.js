@@ -3,7 +3,7 @@ const ReactNative = require('react-native');
 const AppRegistry = ReactNative.AppRegistry;
 const AppContainer = require('containers/App');
 const CreateStore = require('wiring/create-store');
-const Theme = require('styles').materialTheme;
+const Styles = require('styles');
 
 const { colors, shades, getMaterialTheme, ThemeProvider } = require('material-native');
 
@@ -42,7 +42,7 @@ module.exports = (platform) => {
         render() {
 
             return (
-                <ThemeProvider theme={Theme}>
+                <ThemeProvider theme={Styles.materialTheme}>
                     <AppContainer store={store}>
                         <RootNavigator />
                     </AppContainer>
