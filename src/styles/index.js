@@ -1,6 +1,7 @@
 
 const React = require('react');
 const { StyleSheet } = require('react-native');
+const { colors, shades, typo } = require('material-native');
 
 const gStyles = exports.default = {
 
@@ -12,8 +13,18 @@ const gStyles = exports.default = {
     duck: {
         height: 320,
         width: 320
-    }
+    },
 
+    text: {
+        ...typo.body1,
+        color: 'blue',
+    },
+    rect: {
+        height: 48,
+        paddingHorizontal: 16,
+        alignItems: 'center',
+        justifyContent: 'center'
+    }
 };
 
 if (module.hot) {
