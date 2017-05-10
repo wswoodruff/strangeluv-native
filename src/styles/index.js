@@ -31,7 +31,8 @@ const gStyles = exports.default = {
 
         marginVertical: 4,
         borderRadius: 3,
-        backgroundColor: colors.lightBlue400,
+        // backgroundColor: colors.lightBlue400,
+        backgroundColor: colors.green700,
         paddingHorizontal: 16,
         alignItems: 'center'
     },
