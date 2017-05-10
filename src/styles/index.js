@@ -5,8 +5,8 @@ const { colors, shades, typo, getMaterialTheme } = require('material-native');
 
 exports.materialTheme = getMaterialTheme({
     theme: 'light',
-    primary: colors.blue500,
-    darkPrimary: colors.blue700,
+    primary: colors.amber500,
+    lightPrimary: 'blue',
 });
 
 const gStyles = exports.default = {
@@ -23,14 +23,13 @@ const gStyles = exports.default = {
 
     text: {
         ...typo.body1,
-        color: 'blue',
+        paddingTop: 5,
+        color: 'blue'
     },
     rect: {
-        height: 48,
         backgroundColor: colors.amber500,
         paddingHorizontal: 16,
-        alignItems: 'center',
-        justifyContent: 'center'
+        alignItems: 'center'
     }
 };
 
