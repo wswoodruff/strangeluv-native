@@ -20,6 +20,7 @@ class HomeView extends React.Component {
 
                 <CoreRipple
                     accent
+                    pointerEvents='box-only'
                     shadowAniEnabled
                     maskBorderRadius={3}
                     style={style.primaryBtn}
@@ -33,6 +34,7 @@ class HomeView extends React.Component {
                 <Text>{' '}</Text>
                 <CoreRipple
                     accent
+                    pointerEvents='box-only'
                     shadowAniEnabled
                     maskBorderRadius={3}
                     style={style.primaryBtn}

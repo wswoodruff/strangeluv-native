@@ -18,9 +18,10 @@ class Counter extends React.Component {
                 <Text style={style.title}>Counter:</Text>
                 <Text>{' '}</Text>
                 <Text>{counter}</Text>
-                
+
                 <CoreRipple
                     accent
+                    pointerEvents='box-only'
                     shadowAniEnabled
                     maskBorderRadius={3}
                     style={style.primaryBtn}
@@ -31,6 +32,7 @@ class Counter extends React.Component {
                 <Text>{' '}</Text>
                 <CoreRipple
                     accent
+                    pointerEvents='box-only'
                     shadowAniEnabled
                     maskBorderRadius={3}
                     style={style.primaryBtn}
