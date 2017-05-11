@@ -1,41 +1,30 @@
 const React = require('react');
-const { ScrollView, Text } = require('react-native');
-const Icon = require('react-native-vector-icons/MaterialIcons').default;
-const { MKButton } = require('react-native-material-kit');
+const { ScrollView, Text, Button } = require('react-native');
 
-const IncrementBtn = MKButton.coloredButton()
-    .withText('Increment')
-    .build();
-
-const CounterBtn = MKButton.coloredButton()
-    .withText('Double (Async)')
-    .build();
-
+const gStyles = require('styles'); // global styles
 
 class Counter extends React.Component {
 
-    static navigationOptions = {
-        tabBarIcon: () => (
-            <Icon size={24} color='white' name='add' />
-        )
-    }
-
     render() {
 
-        const { counter, increment, doubleAsync } = this.props;
+        const { counter, increment, doubleAsync, style } = this.props;
 
         return (
 
             <ScrollView style={{ padding: 128 }}>
-                <Text>Counter:</Text>
+                <Text style={style.title}>Counter:</Text>
                 <Text>{' '}</Text>
                 <Text>{counter}</Text>
-                <IncrementBtn
+                <Button
                     onPress={increment}
+                    title='Increment'
+                    style={style.button}
                 />
                 <Text>{' '}</Text>
-                <CounterBtn
+                <Button
                     onPress={doubleAsync}
+                    title='Double (Async)'
+                    style={style.button}
                 />
             </ScrollView>
 
@@ -49,4 +38,4 @@ Counter.propTypes = {
     increment: React.PropTypes.func.isRequired
 };
 
-module.exports = Counter;
+module.exports = gStyles.addStyleHelpers(Counter);
