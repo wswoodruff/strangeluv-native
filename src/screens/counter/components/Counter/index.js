@@ -12,24 +12,30 @@ const CounterBtn = MKButton.coloredButton()
     .build();
 
 
+const gStyles = require('styles'); // global styles
+
 class Counter extends React.Component {
 
     render() {
 
-        const { counter, increment, doubleAsync } = this.props;
+        const { counter, increment, doubleAsync, style } = this.props;
 
         return (
 
             <ScrollView style={{ padding: 128 }}>
-                <Text>Counter:</Text>
+                <Text style={style.title}>Counter:</Text>
                 <Text>{' '}</Text>
                 <Text>{counter}</Text>
                 <IncrementBtn
                     onPress={increment}
+                    title='Increment'
+                    style={style.button}
                 />
                 <Text>{' '}</Text>
                 <CounterBtn
                     onPress={doubleAsync}
+                    title='Double (Async)'
+                    style={style.button}
                 />
             </ScrollView>
 
@@ -43,4 +49,4 @@ Counter.propTypes = {
     increment: React.PropTypes.func.isRequired
 };
 
-module.exports = Counter;
+module.exports = gStyles.addStyleHelpers(Counter);

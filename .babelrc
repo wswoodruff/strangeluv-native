@@ -3,7 +3,7 @@
   "sourceMaps": true,
   "plugins": [
     ["module-alias", [
-        { "src": "./src/containers", "expose": "components" },
+        { "src": "./src/components", "expose": "components" },
         { "src": "./src/containers", "expose": "containers" },
         { "src": "./src/reducers", "expose": "reducers" },
         { "src": "./src/images", "expose": "images" },
@@ -12,8 +12,8 @@
         { "src": "./src/static", "expose": "static" },
         { "src": "./src/screens", "expose": "screens" },
         { "src": "./src/wiring", "expose": "wiring" },
+        { "src": "./src/styles", "expose": "styles" },
         { "src": "./src", "expose": "~" }
-    ]],
-    "transform-postcss"
+    ]]
   ]
 }
