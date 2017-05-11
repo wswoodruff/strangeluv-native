@@ -26,21 +26,31 @@ exports.compose = (...stylesToCompose) => {
     ))
 }
 
-exports.addStyleHelpers = (Component, ...stylesToCompose) => {
 
-    let hocStyles = exports.compose(...stylesToCompose);
+exports.addStyleHelpers = (Component, ...stylesToCompose) => {
 
     return class StylishComponent extends React.PureComponent {
 
-        componentWillReceiveProps({ style }) {
+        constructor(props) {
 
-            hocStyles = exports.compose(style || {}, ...stylesToCompose);
-            // To give passed-in styles the last say in style cascading:
-            // hocStyles = exports.compose(...stylesToCompose, style || {});
+            super(props);
+
+            this.state = {
+                hocStyles: exports.compose(props.style || {}, ...stylesToCompose)
+            }
+        }
+
+        componentWillReceiveProps(nextProps) {
+
+            if (nextProps.style) {
+                this.setState((prevState, props) => ({
+                    hocStyles: exports.compose(prevState.style || {}, ...stylesToCompose, nextProps.style)
+                }));
+            }
         }
         render() {
 
-            return <Component {...this.props} style={hocStyles} />;
+            return <Component {...this.props} style={this.state.hocStyles} />;
         }
     }
 }
