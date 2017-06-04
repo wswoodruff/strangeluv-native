@@ -53,6 +53,8 @@
 		5D363C824A19462AA165D794 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CF489282CB944D65A126CA93 /* SimpleLineIcons.ttf */; };
 		182CCD8A25CE4D7FB9C1FC01 /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B7286A7C88064705A74E632D /* Zocial.ttf */; };
 		F74F3D6355B449E7AF3211E6 /* libRCTMaterialKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 923068C416054FF0B98A4E8D /* libRCTMaterialKit.a */; };
+		A2B52E29B5CA4C5AAB37B80C /* libRCTActionSheet.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 4B3BFD62B09D4C65B758569E /* libRCTActionSheet.a */; };
+		601C2245DC22439EB1C863FF /* libRNRandomBytes.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D273C0C77B047D5A9CF6AFD /* libRNRandomBytes.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -292,6 +294,10 @@
 		B7286A7C88064705A74E632D /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		640474A481F54D8EAC47B303 /* RCTMaterialKit.xcodeproj */ = {isa = PBXFileReference; name = "RCTMaterialKit.xcodeproj"; path = "../node_modules/react-native-material-kit/iOS/RCTMaterialKit.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
 		923068C416054FF0B98A4E8D /* libRCTMaterialKit.a */ = {isa = PBXFileReference; name = "libRCTMaterialKit.a"; path = "libRCTMaterialKit.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		A59DCD28B91B4DE1BC7C1D54 /* Yeah.xcodeproj */ = {isa = PBXFileReference; name = "Yeah.xcodeproj"; path = "../node_modules/react-native-rename/AwesomeProject/ios/Yeah.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		4B3BFD62B09D4C65B758569E /* libRCTActionSheet.a */ = {isa = PBXFileReference; name = "libRCTActionSheet.a"; path = "libRCTActionSheet.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
+		D744F607F6FA48F085E23194 /* RNRandomBytes.xcodeproj */ = {isa = PBXFileReference; name = "RNRandomBytes.xcodeproj"; path = "../node_modules/react-native-randombytes/RNRandomBytes.xcodeproj"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = wrapper.pb-project; explicitFileType = undefined; includeInIndex = 0; };
+		7D273C0C77B047D5A9CF6AFD /* libRNRandomBytes.a */ = {isa = PBXFileReference; name = "libRNRandomBytes.a"; path = "libRNRandomBytes.a"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = archive.ar; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -324,6 +330,8 @@
 				272C6948188A4009B65D3E04 /* libjschelpers.a in Frameworks */,
 				B095077C87844596A406D40D /* libRNVectorIcons.a in Frameworks */,
 				F74F3D6355B449E7AF3211E6 /* libRCTMaterialKit.a in Frameworks */,
+				A2B52E29B5CA4C5AAB37B80C /* libRCTActionSheet.a in Frameworks */,
+				601C2245DC22439EB1C863FF /* libRNRandomBytes.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -494,6 +502,8 @@
 				E642D10A858F487A98D9952D /* RNI18n.xcodeproj */,
 				4EFEBAB5CDF442F7B1778328 /* RNVectorIcons.xcodeproj */,
 				640474A481F54D8EAC47B303 /* RCTMaterialKit.xcodeproj */,
+				A59DCD28B91B4DE1BC7C1D54 /* Yeah.xcodeproj */,
+				D744F607F6FA48F085E23194 /* RNRandomBytes.xcodeproj */,
 			);
 			name = Libraries;
 			sourceTree = "<group>";
@@ -1062,6 +1072,12 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-rename/AwesomeProject/ios/Yeah",
+					"$(SRCROOT)/../node_modules/react-native-randombytes",
 				);
 			};
 			name = Debug;
@@ -1089,6 +1105,12 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-rename/AwesomeProject/ios/Yeah",
+					"$(SRCROOT)/../node_modules/react-native-randombytes",
 				);
 			};
 			name = Release;
@@ -1110,6 +1132,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = strangeluvnative;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-rename/AwesomeProject/ios/Yeah",
+					"$(SRCROOT)/../node_modules/react-native-randombytes",
+				);
 			};
 			name = Debug;
 		};
@@ -1129,6 +1156,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.reactjs.native.example.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = strangeluvnative;
 				VERSIONING_SYSTEM = "apple-generic";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-rename/AwesomeProject/ios/Yeah",
+					"$(SRCROOT)/../node_modules/react-native-randombytes",
+				);
 			};
 			name = Release;
 		};
@@ -1163,6 +1195,12 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-rename/AwesomeProject/ios/Yeah",
+					"$(SRCROOT)/../node_modules/react-native-randombytes",
 				);
 			};
 			name = Debug;
@@ -1198,6 +1236,12 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(SRCROOT)/../node_modules/react-native-rename/AwesomeProject/ios/Yeah",
+					"$(SRCROOT)/../node_modules/react-native-randombytes",
 				);
 			};
 			name = Release;
@@ -1228,6 +1272,7 @@
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 				);
 			};
 			name = Debug;
@@ -1252,6 +1297,7 @@
 				TVOS_DEPLOYMENT_TARGET = 10.1;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
+					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
 					"\"$(SRCROOT)/$(TARGET_NAME)\"",
