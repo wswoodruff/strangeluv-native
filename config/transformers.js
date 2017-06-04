@@ -1,12 +1,8 @@
-const babel = require('./babel-transformer');
-const Css2ReactNative = require('css-to-react-native').transform;
+const babelTransformer = require('./babel-transformer');
 
-// const ReactNativeCSS = require('react-native-css');
-// const reactNativeCss = require('./react-native-css-transformer');
+module.exports.transform = function(src, filename, options) {
 
-module.exports = function(data, callback) {
-
-    const extension = String(data.filename.slice(data.filename.lastIndexOf('.')));
+    const extension = String(filename.slice(filename.lastIndexOf('.')));
     let result;
 
     try {
@@ -15,23 +11,24 @@ module.exports = function(data, callback) {
 
             case '.js':
             case '.jsx':
-                result = babel(data.sourceCode, data.filename, data.options);
+                result = babelTransformer(src, filename);
                 break;
-            // case '.css':
-            // case '.scss':
-
-            //     const tmpFile = `module.exports = {hi: 'hello!'};`;
-            //     result = babel(tmpFile, data.filename, data.options);
-            //     break;
 
             default:
-                result = babel(data.sourceCode, data.filename, data.options);
+                result = babelTransformer(src, filename);
                 break;
         }
 
     } catch (e) {
-        callback(e);
+
+        throw new Error(e);
         return;
     }
-    callback(null, result);
+
+    return {
+        ast: result.ast,
+        code: result.code,
+        map: result.map,
+        filename
+    };
 };

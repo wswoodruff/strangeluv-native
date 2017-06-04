@@ -12,8 +12,7 @@
         { "src": "./src/static", "expose": "static" },
         { "src": "./src/screens", "expose": "screens" },
         { "src": "./src/wiring", "expose": "wiring" },
-        { "src": "./src/styles", "expose": "styles" },
-        { "src": "./src", "expose": "~" }
+        { "src": "./src/styles", "expose": "styles" }
     ]]
   ]
 }

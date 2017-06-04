@@ -65,7 +65,7 @@ module.exports = {
     *
     * Equivalent to the `--transformer` command line argument.
     */
-    // getTransformModulePath() {
-    //     return require.resolve('./config/transformers');
-    // }
+    getTransformModulePath() {
+        return require.resolve('./config/transformers');
+    }
 };

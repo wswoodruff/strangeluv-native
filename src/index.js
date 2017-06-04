@@ -6,6 +6,7 @@ const CreateStore = require('wiring/create-store');
 const Styles = require('styles');
 
 const { colors, shades, getMaterialTheme, ThemeProvider } = require('material-native');
+require('../globals');
 
 if (__DEV__) {
 
