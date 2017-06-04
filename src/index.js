@@ -3,6 +3,7 @@ const ReactNative = require('react-native');
 const AppRegistry = ReactNative.AppRegistry;
 const AppContainer = require('containers/App');
 const CreateStore = require('wiring/create-store');
+require('../globals');
 
 if (__DEV__) {
 

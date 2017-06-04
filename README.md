@@ -204,6 +204,9 @@ to define units of logic within our application. See the [application structure]
 
  - branch [`recipe-drawer-material-kit-bottom-navigation`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer-material-kit-bottom-navigation) integrating the `trifecta` of components used in the above recipes: drawer, react-native-material-kit, and react-native-material-bottom-navigation.
 
+ - branch [`recipe-material-native`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-material-native) implementing a first look into the latest effort to bring excellent material design to react-native. This lib is brand-new, aiming to supercede and replace shortcomings in `react-native-material-kit` and `react-native-material-design`.
+
+
 -- After merging each of these, you'll want to run an npm script:
 ```bash
 npm run fresh-start
