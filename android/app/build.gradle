@@ -126,6 +126,7 @@ android {
 }
 
 dependencies {
+    compile project(':react-native-randombytes')
     compile project(':react-native-vector-icons')
     compile project(':react-native-simpledialog-android')
     compile project(':react-native-i18n')
