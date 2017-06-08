@@ -7,17 +7,7 @@ module.exports.transform = function(src, filename, options) {
 
     try {
 
-        switch (extension) {
-
-            case '.js':
-            case '.jsx':
-                result = babelTransformer(src, filename);
-                break;
-
-            default:
-                result = babelTransformer(src, filename);
-                break;
-        }
+        result = babelTransformer(src, filename);
 
     } catch (e) {
 
