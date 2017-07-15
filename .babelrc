@@ -12,7 +12,32 @@
         { "src": "./src/static", "expose": "static" },
         { "src": "./src/screens", "expose": "screens" },
         { "src": "./src/wiring", "expose": "wiring" },
-        { "src": "./src/styles", "expose": "styles" }
-    ]]
-  ]
+        { "src": "./src/utils", "expose": "utils" },
+        { "src": "./src/styles", "expose": "styles" },
+
+        { "src":"npm:constants-browserify", "expose":"constants" },
+        { "src":"npm:react-native-crypto", "expose":"crypto" },
+        { "src":"npm:node-libs-browser/mock/dns","expose":"dns" },
+        { "src":"npm:domain-browser", "expose":"domain" },
+        { "src":"npm:node-libs-browser/mock/empty","expose":"fs"},
+        { "src":"npm:stream-http","expose":"http"},
+        { "src":"npm:https-browserify", "expose":"https"},
+        { "src":"npm:node-libs-browser/mock/net", "expose":"net"},
+        { "src":"npm:os-browserify/browser", "expose":"os"},
+        { "src":"npm:path-browserify", "expose":"path"},
+        { "src":"npm:react-native-pbkdf2-shim","expose":"pbkdf2"},
+        { "src":"npm:querystring-es3", "expose":"querystring"},
+        { "src":"npm:stream-browserify", "expose":"stream"},
+        { "src":"npm:readable-stream/duplex", "expose":"_stream_duplex"},
+        { "src":"npm:readable-stream/passthrough", "expose":"_stream_passthrough"},
+        { "src":"npm:readable-stream/readable", "expose":"_stream_readable"},
+        { "src":"npm:readable-stream/transform", "expose":"_stream_transform"},
+        { "src":"npm:readable-stream/writable", "expose":"_stream_writable"},
+        { "src":"npm:util", "expose":"sys"},
+        { "src":"npm:timers-browserify", "expose":"timers"},
+        { "src":"npm:node-libs-browser/mock/tls", "expose":"tls"},
+        { "src":"npm:tty-browserify", "expose":"tty"},
+        { "src":"npm:vm-browserify", "expose":"vm"},
+        { "src":"npm:browserify-zlib", "expose":"zlib"}
+    ]]]
 }

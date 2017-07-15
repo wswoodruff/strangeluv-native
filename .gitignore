@@ -1,3 +1,7 @@
+# react-native generated native folders
+android/
+ios/
+
 # OSX
 #
 .DS_Store
