@@ -1,7 +1,11 @@
 const React = require('react');
 const { DrawerItems } = require('react-navigation');
-const { ScrollView } = require('react-native');
-const Styles = require('./styles');
+
+// Styles
+
+const gStyles = require('styles');
+
+const { ScrollView } = gStyles;
 
 module.exports = class CustomDrawerContentComponent extends React.Component {
 
@@ -9,7 +13,7 @@ module.exports = class CustomDrawerContentComponent extends React.Component {
 
         return (
 
-            <ScrollView style={Styles.drawerContainer}>
+            <ScrollView>
                 <DrawerItems {...this.props} />
             </ScrollView>
         );

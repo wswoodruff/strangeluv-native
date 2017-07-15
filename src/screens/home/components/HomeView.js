@@ -1,7 +1,6 @@
 const React = require('react');
-const { ScrollView, Text, Image } = require('react-native');
-const Icon = require('react-native-vector-icons/MaterialIcons').default;
 const { MKButton } = require('react-native-material-kit');
+const T = require('prop-types');
 
 const HomeBtn = MKButton.coloredButton()
     .withText('Home')
@@ -11,15 +10,41 @@ const CounterBtn = MKButton.coloredButton()
     .withText('Counter')
     .build();
 
+// Styles
+
 const gStyles = require('styles'); // global styles
 const lStyles = require('./styles'); // local styles
 
-class HomeView extends React.Component {
+const {
+    ScrollView,
+    Title } = gStyles;
+
+const {
+    Duck,
+    InheritStylesText } = lStyles;
+
+// Component
+
+module.exports = class HomeView extends React.PureComponent {
 
     static propTypes = {
-        navigation: React.PropTypes.object.isRequired,
-        style: React.PropTypes.object.isRequired
+        navigation: T.object.isRequired
     };
+
+    constructor() {
+
+        super();
+
+        this.navigate = this._navigate.bind(this);
+    }
+
+    _navigate(navigation, path) {
+
+        return (...a) => {
+
+            navigation.navigate(path);
+        }
+    }
 
     render() {
 
@@ -27,26 +52,21 @@ class HomeView extends React.Component {
 
         return (
 
-            <ScrollView style={{ padding: 128 }}>
+            <ScrollView>
 
-                <HomeBtn onPress={() => {
+                <HomeBtn
+                    onPress={() => (navigation.navigate('Home'))}
+                />
+                <CounterBtn
+                    onPress={() => (navigation.navigate('Counter'))}
+                />
 
-                    navigation.navigate('Home');
-                }} />
+                <Title> Welcome! </Title>
 
-                <CounterBtn onPress={() => {
-
-                    navigation.navigate('Counter');
-                }} />
-
-                <Text style={style.title}>Welcome!</Text>
-                <Image
-                    style={style.duck}
+                <Duck
                     source={require('../assets/duck.jpg')}
                 />
             </ScrollView>
         );
     }
 }
-
-module.exports = gStyles.addStyleHelpers(HomeView, lStyles);

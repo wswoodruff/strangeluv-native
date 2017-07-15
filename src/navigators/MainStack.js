@@ -1,15 +1,14 @@
 const React = require('react');
-const { StyleSheet } = require('react-native');
+
 const { StackNavigator } = require('react-navigation');
 const MainTabs = require('./MainTabs');
-const Icon = require('react-native-vector-icons/MaterialIcons').default;
 
-const Styles = StyleSheet.create({
-    menuBtn: {
-        marginRight: 12
-    }
-});
+// Styles
 
+const lStyles = require('./styles');
+const { MenuIcon } = lStyles;
+
+// Component
 module.exports = (store, screens) => {
 
     return StackNavigator(
@@ -18,8 +17,19 @@ module.exports = (store, screens) => {
         },
         {
             initialRouteName: 'MainTabs',
+            tabBarPosition: 'bottom',
+            tabBarOptions: screens.tabBarOptions,
             headerMode: 'screen',
-            navigationOptions: {}
+            navigationOptions: ({ navigation }) => {
+                return {
+                    headerRight: (
+                        <MenuIcon
+                            name="menu"
+                            onPress={() => navigation.navigate('DrawerOpen')}
+                        />
+                    )
+                }
+            }
         }
     );
 };
