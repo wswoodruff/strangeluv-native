@@ -1,4 +1,5 @@
 const React = require('react');
+const T = require('prop-types');
 const Reducers = require('wiring/reducers');
 const Connect = require('react-redux').connect;
 const { DrawerNavigator, addNavigationHelpers } = require('react-navigation');
@@ -38,7 +39,12 @@ module.exports = (store) => {
         }
     );
 
-    class AppNavigatorClass extends React.Component {
+    class AppNavigatorClass extends React.PureComponent {
+
+        static propTypes = {
+            dispatch: T.any.isRequired,
+            nav: T.any.isRequired
+        }
 
         render() {
 
@@ -57,13 +63,7 @@ module.exports = (store) => {
         };
     };
 
-    AppNavigatorClass.propTypes = {
-        dispatch: React.PropTypes.any.isRequired,
-        nav: React.PropTypes.any.isRequired
-    };
-
     const appNavReducer = require('reducers/nav')(AppNavigator);
-
     Reducers.inject(store, { key: 'nav', reducer: appNavReducer });
 
     return internals.connect(AppNavigatorClass);

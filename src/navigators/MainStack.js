@@ -1,8 +1,13 @@
 const React = require('react');
-const { StyleSheet } = require('react-native');
+const { View } = require('react-native');
 const { StackNavigator } = require('react-navigation');
-const Icon = require('react-native-vector-icons/MaterialIcons').default;
-const style = StyleSheet.create(require('styles').default);
+
+// Styles
+
+const lStyles = require('./styles');
+const { MenuIcon } = lStyles;
+
+// Component
 
 module.exports = (store, screens) => {
 
@@ -18,10 +23,8 @@ module.exports = (store, screens) => {
             navigationOptions: ({ navigation }) => {
                 return {
                     headerRight: (
-                        <Icon
-                            name='menu'
-                            size={24}
-                            style={style.menuBtn}
+                        <MenuIcon
+                            name="menu"
                             onPress={() => navigation.navigate('DrawerOpen')}
                         />
                     )
