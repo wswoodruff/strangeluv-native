@@ -4,7 +4,6 @@ const { CoreRipple } = require('material-native');
 
 // Styles
 
-const { makeStyled } = require('utils/styles');
 const { default: styled } = require('styled-components/native');
 const gStyles = require('styles'); // global styles
 
