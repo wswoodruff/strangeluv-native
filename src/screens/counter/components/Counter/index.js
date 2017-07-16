@@ -1,5 +1,6 @@
 const React = require('react');
 const { CoreRipple } = require('material-native');
+const { default: MaterialRipple } = require('components/MaterialRipple');
 
 const T = require('prop-types');
 
@@ -14,7 +15,10 @@ const {
     Title,
     Button } = gStyles;
 
-const { StylishText } = lStyles;
+const {
+    StyledMaterialRipple,
+    StylishText,
+    WhiteText } = lStyles;
 
 // Component
 
@@ -35,30 +39,22 @@ module.exports = class Counter extends React.PureComponent {
 
         return (
             <ScrollView style={{ padding: 128 }}>
-
                 <Text>Counter:</Text>
                 <Text>{' '}</Text>
                 <StylishText>{counter}</StylishText>
-                
-                <CoreRipple
-                    accent
-                    pointerEvents='box-only'
-                    shadowAniEnabled
-                    maskBorderRadius={3}
+
+                <StyledMaterialRipple
                     onPress={increment}
                 >
-					<Text>Increment</Text>
-				</CoreRipple>
+                    <WhiteText>Increment</WhiteText>
+                </StyledMaterialRipple>
+
                 <Text>{' '}</Text>
-                <CoreRipple
-                    accent
-                    pointerEvents='box-only'
-                    shadowAniEnabled
-                    maskBorderRadius={3}
+                <StyledMaterialRipple
                     onPress={doubleAsync}
                 >
-					<Text>Double (Async)</Text>
-				</CoreRipple>
+					<WhiteText>Double (Async)</WhiteText>
+				</StyledMaterialRipple>
             </ScrollView>
         );
     }
