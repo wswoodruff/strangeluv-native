@@ -1,22 +1,51 @@
 const React = require('react');
-const { ScrollView, Text, Image } = require('react-native');
 const { CoreRipple } = require('material-native');
+const T = require('prop-types');
+const MaterialRipple = require('components/MaterialRipple');
+
+// Styles
 
 const gStyles = require('styles'); // global styles
 const lStyles = require('./styles'); // local styles
 
-class HomeView extends React.Component {
+const {
+    ScrollView,
+    Text,
+    Title } = gStyles;
+
+const {
+    Duck,
+    InheritStylesText } = lStyles;
+
+// Component
+
+module.exports = class HomeView extends React.PureComponent {
 
     static propTypes = {
-        navigation: React.PropTypes.object.isRequired
+        navigation: T.object.isRequired
     };
+
+    constructor() {
+
+        super();
+
+        this.navigate = this._navigate.bind(this);
+    }
+
+    _navigate(navigation, path) {
+
+        return () => {
+
+            navigation.navigate(path);
+        }
+    }
 
     render() {
 
         const { navigation, style } = this.props;
 
         return (
-            <ScrollView style={{ padding: 128 }}>
+            <ScrollView>
 
                 <CoreRipple
                     accent
@@ -29,8 +58,8 @@ class HomeView extends React.Component {
                         navigation.navigate('Home');
                     }}
                 >
-					<Text style={style.text}>Home</Text>
-				</CoreRipple>
+                    <Text style={style.text}>Home</Text>
+                </CoreRipple>
                 <Text>{' '}</Text>
                 <CoreRipple
                     accent
@@ -43,17 +72,15 @@ class HomeView extends React.Component {
                         navigation.navigate('Counter');
                     }}
                 >
-					<Text style={style.text}>Counter</Text>
-				</CoreRipple>
+                    <Text style={style.text}>Counter</Text>
+                </CoreRipple>
 
-                <Text style={style.title}>Welcome!</Text>
-                <Image
-                    style={style.duck}
+                <Title> Welcome! </Title>
+
+                <Duck
                     source={require('../assets/duck.jpg')}
                 />
             </ScrollView>
         );
     }
 }
-
-module.exports = gStyles.addStyleHelpers(HomeView, lStyles);
