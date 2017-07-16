@@ -1,7 +1,8 @@
 const React = require('react');
-const { ScrollView, Text } = require('react-native');
 
+const Icon = require('react-native-vector-icons/MaterialIcons').default;
 const { MKButton } = require('react-native-material-kit');
+const T = require('prop-types');
 
 const IncrementBtn = MKButton.coloredButton()
     .withText('Increment')
@@ -11,42 +12,52 @@ const CounterBtn = MKButton.coloredButton()
     .withText('Double (Async)')
     .build();
 
+// Styles
 
 const gStyles = require('styles'); // global styles
+const lStyles = require('./styles'); // local styles
 
-class Counter extends React.Component {
+const {
+    ScrollView,
+    Text,
+    Title,
+    Button } = gStyles;
+
+const { StylishText } = lStyles;
+
+// Component
+
+module.exports = class Counter extends React.PureComponent {
+
+    static propTypes = {
+        counter: T.number.isRequired,
+        doubleAsync: T.func.isRequired,
+        increment: T.func.isRequired
+    }
 
     render() {
 
-        const { counter, increment, doubleAsync, style } = this.props;
+        const {
+            counter,
+            increment,
+            doubleAsync } = this.props;
 
         return (
-
-            <ScrollView style={{ padding: 128 }}>
-                <Text style={style.title}>Counter:</Text>
+            <ScrollView>
+                <Title>Counter:</Title>
                 <Text>{' '}</Text>
-                <Text>{counter}</Text>
+
+                <StylishText>{counter}</StylishText>
                 <IncrementBtn
                     onPress={increment}
                     title='Increment'
-                    style={style.button}
                 />
                 <Text>{' '}</Text>
                 <CounterBtn
                     onPress={doubleAsync}
                     title='Double (Async)'
-                    style={style.button}
                 />
             </ScrollView>
-
         );
     }
 }
-
-Counter.propTypes = {
-    counter: React.PropTypes.number.isRequired,
-    doubleAsync: React.PropTypes.func.isRequired,
-    increment: React.PropTypes.func.isRequired
-};
-
-module.exports = gStyles.addStyleHelpers(Counter);

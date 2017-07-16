@@ -1,10 +1,8 @@
 const React = require('react');
-const { ScrollView, Text, Image } = require('react-native');
-
-const gStyles = require('styles'); // global styles
-const lStyles = require('./styles'); // local styles
-
 const { MKButton } = require('react-native-material-kit');
+const T = require('prop-types');
+const { default: styled } = require('styled-components/native');
+
 
 const HomeBtn = MKButton.coloredButton()
     .withText('Home')
@@ -14,38 +12,69 @@ const CounterBtn = MKButton.coloredButton()
     .withText('Counter')
     .build();
 
+// Styles
 
-class HomeView extends React.Component {
+const gStyles = require('styles'); // global styles
+const lStyles = require('./styles'); // local styles
+
+const {
+    ScrollView,
+    Title } = gStyles;
+
+const {
+    Duck,
+    InheritStylesText } = lStyles;
+
+const HomeBtnContainer = styled.View`
+    margin-bottom: 10px;
+`
+
+// Component
+
+module.exports = class HomeView extends React.PureComponent {
 
     static propTypes = {
-        navigation: React.PropTypes.object.isRequired
+        navigation: T.object.isRequired
     };
+
+    constructor() {
+
+        super();
+
+        this.navigate = this._navigate.bind(this);
+    }
+
+    _navigate(navigation, path) {
+
+        return () => {
+
+            navigation.navigate(path);
+        }
+    }
 
     render() {
 
         const { navigation, style } = this.props;
 
         return (
-            <ScrollView style={{ padding: 128 }}>
 
-                <HomeBtn onPress={() => {
+            <ScrollView>
 
-                    navigation.navigate('Home');
-                }} />
+                <HomeBtnContainer>
+                    <HomeBtn
+                        onPress={() => (navigation.navigate('Home'))}
+                    />
+                </HomeBtnContainer>
+                <CounterBtn
+                    onPress={() => (navigation.navigate('Counter'))}
+                />
 
-                <CounterBtn onPress={() => {
+                <Title> Welcome! </Title>
 
-                    navigation.navigate('Counter');
-                }} />
-
-                <Text style={style.title}>Welcome!</Text>
-                <Image
-                    style={style.duck}
+                <Duck
                     source={require('../assets/duck.jpg')}
                 />
             </ScrollView>
         );
     }
 }
-
-module.exports = gStyles.addStyleHelpers(HomeView, lStyles);

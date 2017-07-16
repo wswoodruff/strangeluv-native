@@ -7,29 +7,6 @@
 - `routes` in react-web are now referred to as `screens`.
 - Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
 
-### Troubleshooting: TL;DR is in first bullet
-
-You will need this section, so you might as well read it now.
-
- - Try this technique: during development keep open 2 terminal windows: one to use `npm run dev` with, and the other
- to use `npm run rc-start`. **Both windows' directories should be in your project's root dir.**
-
-#### Got a red sreen? Try these:
-
-- Run the react-native packager from your app's directory. So `^C` out of the packager process, then cd 'my/project/path', and run `npm run rc-start`. Then reload the simulator, watch the packager's progress, etc.
-- Keep reloading the simulator or shake the phone and hit reload
-- Quit the react-native packager terminal window, cd into your project's root dir.
-- `npm run rc-start` - run that, let it go through and wait for the simulator, then exit. Then use `npm run dev` to open the simulator for you. Keep hitting reload on your simulator or device.
-- `$ npm run clean` will clean watchman's cache. This fixes problems often.
-- `$ rm -rf node_modules && npm install`
-- `$ npm run fresh-install` removes your iOS build, removes node_modules, clears caches, and runs `npm install`
-- _Double check and make sure your packager terminal's cwd is your project root_
-- `Repeat!` Seriously - keep repeating these, things will eventually work, if not then please open an issue!
-- `$ npm run rc-start` starts react-native's packager while clearing it's cache.
-- `$ npm run clean` clears watchman cache, and other cache related to react-native.
-- It's very important to clear the cache for react-native's packager and watchman on a regular basis, as well as any other cache you ever come across while programming. Especially if you've been switching projects :+1:!
-
-
 ## > How I Learned to Stop Worrying and Love _React Native_
 
 Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) React/Redux starter kit. We've made it our own. We've also stolen most of this README from strangeluv. In here you'll find react-native, Redux, and a well-architected workflow that uses react-native's own Packager instead of Webpack. Follow the file-structure in this boilerplate to profit from well-thought, battle-proven code separation patterns used in [strangeluv](https://github.com/BigRoomStudios/strangeluv) for react-web.
@@ -49,13 +26,13 @@ Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) Rea
 * [react-native](https://github.com/facebook/react-native)
 * [redux](https://github.com/rackt/redux)
 * [react-navigation](https://github.com/react-community/react-navigation)
+* [styled-components](https://github.com/styled-components/styled-components)
 * [babel](https://github.com/babel/babel)
 * [eslint](http://eslint.org)
 
 ## Requirements
 ```
-# Only been used with
-* react-native `0.41.2`
+* react-native `0.44.1`
 ```
 
 ## Getting Started
@@ -65,7 +42,7 @@ See this Getting Started guide on Facebook's Github: https://facebook.github.io/
 
 #### Git clone the project, then rename it
 ```bash
-$ npm install -g react-native
+$ npm install -g react-native-cli
 $ npm install -g react-native-rename
 $ git clone https://github.com/wswoodruff/strangeluv-native my-project
 $ cd my-project   # Then adjust package.json and readme as necessary
@@ -73,15 +50,11 @@ $ react-native-rename mynewprojectname # No spaces or capitals are allowed or th
 $ grep -e 'strangeluvnative' -rl . | xargs sed -i '' 's/strangeluvnative/mynewprojectname/g'
 # Note: the grep line above was reported as non-working on another computer. If you'd like to PR
 # a better find-and-replace one-liner or short script for this, that'd be welcome! =)
-```
 
-Now inside your `ios` folder, make sure all of the top-level files and folders match your project's name.
+$ npm run fresh-install
+# Make sure to answer "n to keep your version" when you're prompted with ".babelrc has changed in the new version.
+Do you want to keep your .babelrc or replace it with the latest version?" after running fresh-install
 
--- Side note, you'll almost certainly see a red screen at some point during this setup. The troubleshooting section is near the top
-
-Now launch :rocket:!
-```bash
-$ npm install     # Install project dependencies
 $ npm run dev     # Compile and launch to iOS simulator
 ```
 
@@ -172,6 +145,20 @@ Local styles get the last say in everything. Whatever you require as `lStyles` i
 Let's test this. Go in `src/screens/home/components/styles.js` and comment out the `width` and `height` props. The global styles are setting the duck to a larger size. So if you comment these out, you should be able to refresh and see a larger duck on the homepage.
 
 - the File `src/screens/.stylishComponent.js` should serve as a good template for creating a new component that's `connected` with cascading styles.
+
+## Troubleshooting
+
+#### Got a red sreen? Try these:
+
+- Reload the simulator
+- `$ npm run clean` will clean watchman's cache. This fixes problems often.
+- `$ npm run fresh-install` removes your iOS and Android builds, removes node_modules, clears caches, runs `npm install` and `react-native upgrade` (which rebuilds the iOS and Android folders and prompts you with questions. You should answer `n` to those.
+- _Double check and make sure your packager terminal is in your project root_
+- `Repeat!` Seriously - keep repeating these, things will eventually work, if not then please open an issue!
+- `$ npm run rc-start` starts react-native's packager while clearing it's cache.
+- `$ npm run clean` clears watchman cache, and other cache related to react-native.
+- It's very important to clear the cache for react-native's packager and watchman on a regular basis, as well as any other cache you ever come across while programming. Especially if you've been switching projects :+1:!
+
 
 ## Development
 ### Code Style
