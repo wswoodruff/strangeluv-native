@@ -1,5 +1,4 @@
 const React = require('react');
-const { ScrollView, Text, Button } = require('react-native');
 const { CoreRipple } = require('material-native');
 
 const T = require('prop-types');
@@ -37,19 +36,18 @@ module.exports = class Counter extends React.PureComponent {
         return (
             <ScrollView style={{ padding: 128 }}>
 
-                <Text style={style.title}>Counter:</Text>
+                <Text>Counter:</Text>
                 <Text>{' '}</Text>
                 <StylishText>{counter}</StylishText>
-
+                
                 <CoreRipple
                     accent
                     pointerEvents='box-only'
                     shadowAniEnabled
                     maskBorderRadius={3}
-                    style={style.primaryBtn}
                     onPress={increment}
                 >
-					<Text style={style.text}>Increment</Text>
+					<Text>Increment</Text>
 				</CoreRipple>
                 <Text>{' '}</Text>
                 <CoreRipple
@@ -57,10 +55,9 @@ module.exports = class Counter extends React.PureComponent {
                     pointerEvents='box-only'
                     shadowAniEnabled
                     maskBorderRadius={3}
-                    style={style.primaryBtn}
                     onPress={doubleAsync}
                 >
-					<Text style={style.text}>Double (Async)</Text>
+					<Text>Double (Async)</Text>
 				</CoreRipple>
             </ScrollView>
         );

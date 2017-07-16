@@ -1,7 +1,7 @@
 const React = require('react');
 const { CoreRipple } = require('material-native');
 const T = require('prop-types');
-const MaterialRipple = require('components/MaterialRipple');
+// const MaterialRipple = require('components/MaterialRipple');
 
 // Styles
 
@@ -52,13 +52,12 @@ module.exports = class HomeView extends React.PureComponent {
                     pointerEvents='box-only'
                     shadowAniEnabled
                     maskBorderRadius={3}
-                    style={style.primaryBtn}
                     onPress={() => {
 
                         navigation.navigate('Home');
                     }}
                 >
-                    <Text style={style.text}>Home</Text>
+                    <Text>Home</Text>
                 </CoreRipple>
                 <Text>{' '}</Text>
                 <CoreRipple
@@ -66,13 +65,12 @@ module.exports = class HomeView extends React.PureComponent {
                     pointerEvents='box-only'
                     shadowAniEnabled
                     maskBorderRadius={3}
-                    style={style.primaryBtn}
                     onPress={() => {
 
                         navigation.navigate('Counter');
                     }}
                 >
-                    <Text style={style.text}>Counter</Text>
+                    <Text>Counter</Text>
                 </CoreRipple>
 
                 <Title> Welcome! </Title>
