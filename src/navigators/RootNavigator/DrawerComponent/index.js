@@ -12,7 +12,6 @@ module.exports = class CustomDrawerContentComponent extends React.Component {
     render() {
 
         return (
-
             <ScrollView>
                 <DrawerItems {...this.props} />
             </ScrollView>

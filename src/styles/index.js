@@ -1,6 +1,7 @@
 
 const { default: styled } = require('styled-components/native');
 const Theme = require('./theme');
+const { styled: MaterialIcon } = require('components/MaterialIcon');
 
 const StyledText = styled.Text`
     color: ${Theme.primaryTextColor};
@@ -10,6 +11,11 @@ const gStyles = module.exports = {
     ScrollView: styled.ScrollView`
         background-color: ${Theme.primaryBgColor};
         padding: 128px;
+    `,
+    MenuIcon: MaterialIcon.attrs({
+        size: Theme.iconSize
+    })`
+        padding-right: 12px;
     `,
     Text: StyledText,
     Title: StyledText.extend`

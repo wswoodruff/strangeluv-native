@@ -4,7 +4,7 @@
   "scripts": {
     "start": "node node_modules/react-native/local-cli/cli.js start",
     "rc-start": "npm start -- --reset-cache",
-    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean",
+    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean --force",
     "clean-start": "npm run clean && npm run rc-start",
     "fresh-install": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean --force && rm -rf ios && rm -rf android && npm install && npm run link && react-native upgrade",
     "fresh-start": "npm run fresh-install && npm run rc-start",

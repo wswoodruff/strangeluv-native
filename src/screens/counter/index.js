@@ -1,5 +1,6 @@
 const React = require('react');
 const Icon = require('react-native-vector-icons/MaterialIcons').default;
+const { default: MaterialIcon } = require('components/MaterialIcon');
 
 module.exports = {
 
@@ -9,7 +10,11 @@ module.exports = {
         title: 'Counter',
         drawerLabel: 'Counter',
         tabBarIcon: () => (
-            <Icon size={24} color='white' name='add' />
+            <MaterialIcon
+                size={24}
+                color='white'
+                name='add'
+            />
         )
     }
 };

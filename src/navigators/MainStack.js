@@ -5,8 +5,8 @@ const MainTabs = require('./MainTabs');
 
 // Styles
 
-const lStyles = require('./styles');
-const { MenuIcon } = lStyles;
+const gStyles = require('styles');
+const { MenuIcon } = gStyles;
 
 // Component
 module.exports = (store, screens) => {
