@@ -6,7 +6,7 @@
     "rc-start": "npm start -- --reset-cache",
     "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean",
     "clean-start": "npm run clean && npm run rc-start",
-    "fresh-install": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean --force && rm -rf ios && rm -rf android && npm install && npm run link && react-native upgrade",
+    "fresh-install": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean --force && rm -rf ios && rm -rf android && npm install && react-native upgrade && react-native link",
     "fresh-start": "npm run fresh-install && npm run rc-start",
     "packager": "osascript -e 'tell application \"Terminal\" to do script \"cd '$(pwd)' && npm run rc-start\"'",
     "dev": "NODE_ENV=development npm run packager &&  react-native run-ios",
