@@ -1,15 +1,17 @@
 {
   "parser": "babel-eslint",
   "extends": [
-    "hapi", "standard-react"
+    "hapi",
+    "standard-react"
+  ],
+  "plugins": [
+      "react",
+      "react-native",
+      "babel"
   ],
   "env": {
     "jest": true
   },
-  "plugins": [
-      "react",
-      "react-native"
-  ],
   "globals": {
     "__DEV__": false,
     "__PROD__": false,
@@ -25,14 +27,14 @@
     }
   },
   "rules": {
+    "indent": [2, 4, { "MemberExpression": 0, "SwitchCase": 1 }],
+    "react/jsx-indent": [2, 4],
+    "react/jsx-indent-props": [2, 4],
     "no-console": 0,
     "react-native/no-unused-styles": 2,
     "react-native/split-platform-components": 2,
     "react-native/no-inline-styles": 2,
-    "react-native/no-color-literals": 2,
-    "indent": [2, 4, { "MemberExpression": 0, "SwitchCase": 1 }],
-    "react/jsx-indent": [2, 4],
-    "react/jsx-indent-props": [2, 4]
+    "react-native/no-color-literals": 2
   },
   "settings": {
     "import/resolver": {
