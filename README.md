@@ -1,9 +1,11 @@
 # strangeluv-native
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/wswoodruff/strangeluv-native.svg)](https://greenkeeper.io/)
+
 ## Notable differences between `strangeluv-native` and [`strangeluv`](https://github.com/BigRoomStudios/strangeluv)
 
 - `strangeluv-native` is a boilerplate for react-native. [`strangeluv`](https://github.com/BigRoomStudios/strangeluv) is a boilerplate for react-web.
-- You must rename the 'strangeluvnative' project before npm installing
+- You must rename the 'doggo-native' project before npm installing
 - `routes` in react-web are now referred to as `screens`.
 - Using [react-navigation](https://github.com/react-community/react-navigation) as we do in this boilerplate, there is the concept of `navigators`. You've got StackNavigator, TabNavigator, and DrawerNavigator given by react-navigation. Other libraries like [`react-native-material-bottom-navigation`](https://github.com/timomeh/react-native-material-bottom-navigation) can integrate with react-navigation. This bottom-navigation library can be used as a TabNavigator in react-navigation. Here's a recipe for [strangeluv-native implementing react-native-material-bottom-navigation](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)
 
@@ -47,7 +49,7 @@ $ npm install -g react-native-rename
 $ git clone https://github.com/wswoodruff/strangeluv-native my-project
 $ cd my-project   # Then adjust package.json and readme as necessary
 $ react-native-rename mynewprojectname # No spaces or capitals are allowed or this won't work on Android!
-$ grep -e 'strangeluvnative' -rl . | xargs sed -i '' 's/strangeluvnative/mynewprojectname/g'
+$ grep -e 'doggo-native' -rl . | xargs sed -i '' 's/doggo-native/mynewprojectname/g'
 # Note: the grep line above was reported as non-working on another computer. If you'd like to PR
 # a better find-and-replace one-liner or short script for this, that'd be welcome! =)
 
