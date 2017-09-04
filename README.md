@@ -1,5 +1,7 @@
 # strangeluv-native
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/wswoodruff/strangeluv-native.svg)](https://greenkeeper.io/)
+
 ## Notable differences between `strangeluv-native` and [`strangeluv`](https://github.com/BigRoomStudios/strangeluv)
 
 - `strangeluv-native` is a boilerplate for react-native. [`strangeluv`](https://github.com/BigRoomStudios/strangeluv) is a boilerplate for react-web.
