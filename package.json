@@ -39,6 +39,7 @@
     "joi": "^10.5.2",
     "keymirror": "^0.1.1",
     "labbable": "^2.1.0",
+    "material-native": "0.0.0-alpha.9",
     "node-sass": "^4.5.0",
     "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.12",

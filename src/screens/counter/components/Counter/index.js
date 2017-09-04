@@ -1,16 +1,8 @@
 const React = require('react');
+const { CoreRipple } = require('material-native');
+const { default: MaterialRipple } = require('components/MaterialRipple');
 
-const Icon = require('react-native-vector-icons/MaterialIcons').default;
-const { MKButton } = require('react-native-material-kit');
 const T = require('prop-types');
-
-const IncrementBtn = MKButton.coloredButton()
-    .withText('Increment')
-    .build();
-
-const CounterBtn = MKButton.coloredButton()
-    .withText('Double (Async)')
-    .build();
 
 // Styles
 
@@ -23,7 +15,10 @@ const {
     Title,
     Button } = gStyles;
 
-const { StylishText } = lStyles;
+const {
+    StyledMaterialRipple,
+    StylishText,
+    WhiteText } = lStyles;
 
 // Component
 
@@ -43,20 +38,23 @@ module.exports = class Counter extends React.PureComponent {
             doubleAsync } = this.props;
 
         return (
-            <ScrollView>
-                <Title>Counter:</Title>
+            <ScrollView style={{ padding: 128 }}>
+                <Text>Counter:</Text>
                 <Text>{' '}</Text>
-
                 <StylishText>{counter}</StylishText>
-                <IncrementBtn
+
+                <StyledMaterialRipple
                     onPress={increment}
-                    title='Increment'
-                />
+                >
+                    <WhiteText>Increment</WhiteText>
+                </StyledMaterialRipple>
+
                 <Text>{' '}</Text>
-                <CounterBtn
+                <StyledMaterialRipple
                     onPress={doubleAsync}
-                    title='Double (Async)'
-                />
+                >
+					<WhiteText>Double (Async)</WhiteText>
+				</StyledMaterialRipple>
             </ScrollView>
         );
     }
