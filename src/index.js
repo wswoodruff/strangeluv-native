@@ -49,5 +49,5 @@ module.exports = (platform) => {
 
     // register with the AppRegistery and :rocket: into space!
 
-    AppRegistry.registerComponent('doggo-native', () => AppContainerClass);
+    AppRegistry.registerComponent('strangeluvnative', () => AppContainerClass);
 };
