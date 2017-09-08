@@ -43,7 +43,7 @@
     "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.12",
     "react-dom": "16.0.0-alpha.12",
-    "react-mixin": "3.1.0",
+    "react-mixin": "3.1.1",
     "react-native": "0.48.2",
     "react-native-i18n": "2.0.5",
     "react-native-navbar": "2.0.1",
