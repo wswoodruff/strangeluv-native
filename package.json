@@ -67,7 +67,7 @@
   },
   "devDependencies": {
     "babel-core": "6.26.0",
-    "babel-eslint": "^7.0.0",
+    "babel-eslint": "^8.0.0",
     "babel-jest": "21.0.2",
     "babel-plugin-css-modules-transform": "^1.2.7",
     "babel-plugin-globals": "^3.0.0",
