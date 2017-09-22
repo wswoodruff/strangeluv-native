@@ -60,7 +60,7 @@
     "regenerator": "0.10.1",
     "strangeluv-core": "^1.2.0",
     "styled-components": "^2.1.1",
-    "tcomb-form-native": "0.6.9",
+    "tcomb-form-native": "0.6.10",
     "undefined": "0.1.0",
     "underscore": "1.8.3",
     "validate.js": "0.11.1"
