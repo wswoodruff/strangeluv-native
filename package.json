@@ -63,7 +63,7 @@
     "tcomb-form-native": "0.6.9",
     "undefined": "0.1.0",
     "underscore": "1.8.3",
-    "validate.js": "0.11.1"
+    "validate.js": "0.12.0"
   },
   "devDependencies": {
     "babel-core": "6.26.0",
