@@ -39,7 +39,7 @@
     "joi": "^13.0.1",
     "keymirror": "^0.1.1",
     "labbable": "^2.1.0",
-    "node-sass": "^4.5.0",
+    "node-sass": "^4.7.2",
     "prop-types": "^15.5.10",
     "react": "16.0.0-alpha.12",
     "react-dom": "16.0.0-alpha.12",
