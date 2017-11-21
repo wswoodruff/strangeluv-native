@@ -32,7 +32,7 @@ const store = CreateStore({});
 // const pJson = require('../package');
 // const appVersion = pJson.version;
 
-module.exports = (platform) => {
+module.exports = () => {
 
     const RootNavigator = require('./navigators/RootNavigator')(store);
 
