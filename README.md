@@ -1,5 +1,7 @@
 # strangeluv-native
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/wswoodruff/strangeluv-native.svg)](https://greenkeeper.io/)
+
 ## Notable differences between `strangeluv-native` and [`strangeluv`](https://github.com/BigRoomStudios/strangeluv)
 
 - `strangeluv-native` is a boilerplate for react-native. [`strangeluv`](https://github.com/BigRoomStudios/strangeluv) is a boilerplate for react-web.
@@ -185,7 +187,7 @@ to define units of logic within our application. See the [application structure]
 ## Recipes
  - branch [`recipe-react-native-material-bottom-navigation`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-bottom-navigation)  integrating [react-native-material-bottom-navigation](https://github.com/timomeh/react-native-material-bottom-navigation)
 
- - branch [`recipe-drawer`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer) integrating [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-native
+ - branch [`recipe-drawer`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-drawer) integrating [DrawerNavigator](https://reactnavigation.org/docs/navigators/drawer) from react-navigation
 
  - branch [`recipe-react-native-material-kit`](https://github.com/wswoodruff/strangeluv-native/compare/master...recipe-react-native-material-kit) integrating [react-native-material-kit](https://github.com/xinthink/react-native-material-kit)
 
