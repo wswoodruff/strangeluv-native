@@ -15,8 +15,8 @@
         "a": "node node_modules/react-native/local-cli/cli.js run-android",
         "android": "node node_modules/react-native/local-cli/cli.js run-android",
         "link": "node node_modules/react-native/local-cli/cli.js link",
-        "remotedev": "remotedev-debugger --injectserver",
-        "postinstall": "npm run link && react-native upgrade && npm run remotedev"
+        "remotedev": "remotedev-debugger --hostname localhost --port 5678 --injectserver",
+        "postinstall": "npm run link && npm run remotedev && react-native upgrade",
     },
     "dependencies": {
         "babel-cli": "^6.5.1",
