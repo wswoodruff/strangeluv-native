@@ -5,7 +5,8 @@ const { Provider } = require('react-redux');
 module.exports = class App extends React.PureComponent {
 
     static propTypes = {
-        store: T.object.isRequired
+        store: T.object.isRequired,
+        children: T.node.isRequired
     }
 
     render() {

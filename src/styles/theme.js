@@ -1,5 +1,4 @@
-
-const Theme = module.exports = {
+module.exports = {
 
     // Text //
     primaryTextColor: 'black',

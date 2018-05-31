@@ -6,7 +6,7 @@ const StyledText = styled.Text`
     color: ${Theme.primaryTextColor};
 `;
 
-const gStyles = module.exports = {
+module.exports = {
 
     ScrollView: styled.ScrollView`
         background-color: ${Theme.primaryBgColor};

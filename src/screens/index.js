@@ -1,4 +1,3 @@
-const React = require('react');
 const Counter = require('./counter');
 const Home = require('./home');
 
