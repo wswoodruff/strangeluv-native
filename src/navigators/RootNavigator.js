@@ -1,8 +1,6 @@
-const React = require('react');
-const T = require('prop-types');
 const Reducers = require('wiring/reducers');
 const Connect = require('react-redux').connect;
-const { StackNavigator, addNavigationHelpers } = require('react-navigation');
+const { createStackNavigator: CreateStackNavigator } = require('react-navigation');
 const internals = {};
 
 internals.connect = Connect(
@@ -19,47 +17,15 @@ module.exports = (store) => {
         throw new Error('Screens must export props "routeConfig" and "initialRouteName"');
     }
 
-    // https://reactnavigation.org/docs/navigators
-    // https://reactnavigation.org/docs/navigators/stack#RouteConfigs
-
-    // Screens returns { routeConfig, initialRouteName }
-
-    const AppNavigator = StackNavigator(
-
+    const AppNavigator = CreateStackNavigator(
         Screens.routeConfig,
-
         {
-            // nav config
             initialRouteName: Screens.initialRouteName
         }
     );
 
-    class AppNavigatorClass extends React.PureComponent {
-
-        static propTypes = {
-            dispatch: T.any.isRequired,
-            nav: T.any.isRequired
-        }
-
-        render() {
-
-            const { dispatch, nav } = this.props;
-
-            return (
-                <AppNavigator
-                    navigation={
-                        addNavigationHelpers({
-                            dispatch,
-                            state: nav
-                        })
-                    }
-                />
-            );
-        };
-    };
-
     const appNavReducer = require('reducers/nav')(AppNavigator);
     Reducers.inject(store, { key: 'nav', reducer: appNavReducer });
 
-    return internals.connect(AppNavigatorClass);
+    return internals.connect(AppNavigator);
 };
