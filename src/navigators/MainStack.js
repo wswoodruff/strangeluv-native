@@ -25,7 +25,7 @@ module.exports = (store, screens) => {
                     headerRight: (
                         <MenuIcon
                             name='menu'
-                            onPress={() => navigation.navigate('DrawerOpen')}
+                            onPress={() => navigation.openDrawer()}
                         />
                     )
                 };
