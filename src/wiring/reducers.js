@@ -11,8 +11,6 @@ exports.makeRoot = (store, asyncReducers) => {
 
 exports.inject = (store, { key, reducer }) => {
 
-    console.log(key, reducer);
-
     store.asyncReducers[key] = reducer;
     const root = exports.makeRoot(store, store.asyncReducers);
     store.replaceReducer(root);
