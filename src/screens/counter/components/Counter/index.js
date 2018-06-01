@@ -3,16 +3,16 @@ const T = require('prop-types');
 
 // Styles
 
-const gStyles = require('styles'); // global styles
-const lStyles = require('./styles'); // local styles
+const GStyles = require('styles'); // global styles
+const LStyles = require('./styles'); // local styles
 
 const {
     ScrollView,
     Text,
     Title,
-    Button } = gStyles;
+    Button } = GStyles;
 
-const { StylishText } = lStyles;
+const { StylishText } = LStyles;
 
 // Component
 
@@ -48,4 +48,4 @@ module.exports = class Counter extends React.PureComponent {
             </ScrollView>
         );
     }
-}
+};

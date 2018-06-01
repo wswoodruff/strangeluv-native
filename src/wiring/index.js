@@ -1,5 +1,5 @@
 
-const wiringReducers = require('./reducers');
+const WiringReducers = require('./reducers');
 
 module.exports = (store) => {
 
@@ -15,7 +15,7 @@ module.exports = (store) => {
                 injectVal.key = key;
                 injectVal.reducer = hotReducer;
 
-                wiringReducers.inject(store, injectVal);
+                WiringReducers.inject(store, injectVal);
             });
         });
     }
