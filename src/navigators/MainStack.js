@@ -1,11 +1,10 @@
 const React = require('react');
-const { View } = require('react-native');
 const { StackNavigator } = require('react-navigation');
 
 // Styles
 
-const lStyles = require('./styles');
-const { MenuIcon } = lStyles;
+const LStyles = require('./styles');
+const { MenuIcon } = LStyles;
 
 // Component
 
@@ -21,14 +20,15 @@ module.exports = (store, screens) => {
             tabBarOptions: screens.tabBarOptions,
             headerMode: 'screen',
             navigationOptions: ({ navigation }) => {
+
                 return {
                     headerRight: (
                         <MenuIcon
-                            name="menu"
+                            name='menu'
                             onPress={() => navigation.navigate('DrawerOpen')}
                         />
                     )
-                }
+                };
             }
         }
     );

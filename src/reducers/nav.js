@@ -6,7 +6,6 @@ module.exports = (AppStackNavigator) => {
     return (state, action) => {
 
         const type = action.type;
-        const payload = action.payload;
 
         switch (type) {
 
