@@ -1,4 +1,3 @@
-
 const { default: styled } = require('styled-components/native');
 const Theme = require('./theme');
 
@@ -6,7 +5,7 @@ const StyledText = styled.Text`
     color: ${Theme.primaryTextColor};
 `;
 
-const gStyles = module.exports = {
+module.exports = {
     ScrollView: styled.ScrollView`
         background-color: ${Theme.primaryBgColor};
         padding: 128px;

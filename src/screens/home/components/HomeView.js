@@ -2,18 +2,11 @@ const React = require('react');
 const T = require('prop-types');
 
 // Styles
+const GStyles = require('styles'); // global styles
+const LStyles = require('./styles'); // local styles
 
-const gStyles = require('styles'); // global styles
-const lStyles = require('./styles'); // local styles
-
-const {
-    ScrollView,
-    Text,
-    Title } = gStyles;
-
-const {
-    Duck,
-    InheritStylesText } = lStyles;
+const { ScrollView, Title } = GStyles;
+const { Duck, InheritStylesText } = LStyles;
 
 // Component
 
@@ -35,12 +28,12 @@ module.exports = class HomeView extends React.PureComponent {
         return (...a) => {
 
             navigation.navigate(path);
-        }
+        };
     }
 
     render() {
 
-        const { navigation, style } = this.props;
+        const { navigation } = this.props;
 
         return (
             <ScrollView>
@@ -67,4 +60,4 @@ module.exports = class HomeView extends React.PureComponent {
             </ScrollView>
         );
     }
-}
+};

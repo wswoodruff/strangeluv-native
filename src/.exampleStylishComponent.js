@@ -2,21 +2,15 @@ const React = require('react');
 const T = require('prop-types');
 
 // Styles
-
 const Theme = require('styles/theme');
+const GStyles = require('styles'); // global styles
+// const LStyles = require('./styles'); // local styles
 
-const gStyles = require('styles'); // global styles
-// const lStyles = require('./styles'); // local styles
-
-const {
-    ScrollView,
-    Text } = gStyles;
+const { ScrollView, Text } = GStyles;
 
 const StylishText = Text.extend`
     color: ${Theme.primaryColor}
 `;
-
-// Component
 
 module.exports = class Stylish extends React.PureComponent {
 

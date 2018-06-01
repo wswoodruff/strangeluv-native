@@ -1,5 +1,4 @@
 const React = require('react');
-const T = require('prop-types');
 const { default: Icon } = require('react-native-vector-icons/MaterialIcons');
 
 // Styles
@@ -16,7 +15,7 @@ exports.default = class MaterialIcon extends React.PureComponent {
             <Icon {...this.props} />
         );
     }
-}
+};
 
 // Custom styled-component
 
