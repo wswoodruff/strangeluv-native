@@ -1,4 +1,3 @@
-
 const { default: styled } = require('styled-components/native');
 const Theme = require('./theme');
 
