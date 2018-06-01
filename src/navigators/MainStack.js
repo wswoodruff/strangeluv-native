@@ -1,5 +1,5 @@
 const React = require('react');
-const { StackNavigator } = require('react-navigation');
+const { createStackNavigator: CreateStackNavigator } = require('react-navigation');
 
 // Styles
 
@@ -10,7 +10,7 @@ const { MenuIcon } = LStyles;
 
 module.exports = (store, screens) => {
 
-    return StackNavigator(
+    return CreateStackNavigator(
         {
             ...screens.routeConfig
         },
