@@ -36,7 +36,7 @@
         "keymirror": "^0.1.1",
         "prop-types": "^15.6.0",
         "react": "16.4.0",
-        "react-native": "^0.55.4",
+        "react-native": "^0.56.0",
         "react-native-rename": "^2.2.0",
         "react-navigation": "2.0.4",
         "react-redux": "5.0.7",
