@@ -1,14 +1,14 @@
-
+const { default: styled } = require('styled-components/native');
 const Theme = require('styles/theme');
-const { Duck, Text } = require('styles');
 
 module.exports = {
-    Duck: Duck.extend`
-        margin-top: 20px;
-        width: 120px;
-        height: 120px;
+    BeginButton: styled.TouchableOpacity`
+        margin-top: 50%;
+        padding: 10px;
     `,
-    InheritStylesText: Text.extend`
-        color: ${(props) => props.color || Theme.secondaryColor}
+    BtnText: styled.Text`
+        text-align: center;
+        font-size: 30px;
+        color: ${Theme.secondaryColor};
     `
 };

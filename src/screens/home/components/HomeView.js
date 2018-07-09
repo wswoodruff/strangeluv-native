@@ -1,12 +1,10 @@
 const React = require('react');
 const T = require('prop-types');
+const { ScrollView } = require('react-native');
 
 // Styles
-const GStyles = require('styles'); // global styles
-const LStyles = require('./styles'); // local styles
 
-const { ScrollView, Title } = GStyles;
-const { Duck, InheritStylesText } = LStyles;
+const { BeginButton, BtnText } = require('./styles');
 
 // Component
 
@@ -37,26 +35,11 @@ module.exports = class HomeView extends React.PureComponent {
 
         return (
             <ScrollView>
-                <InheritStylesText
-                    color='#b71c1c' // Material Red900
-                    onPress={this.navigate(navigation, 'Home')}>
-
-                    Home
-
-                </InheritStylesText>
-
-                <InheritStylesText
-                    onPress={this.navigate(navigation, 'Counter')}>
-
-                    Counter
-
-                </InheritStylesText>
-
-                <Title> Welcome! </Title>
-
-                <Duck
-                    source={require('../assets/duck.jpg')}
-                />
+                <BeginButton>
+                    <BtnText>
+                        Start Demo
+                    </BtnText>
+                </BeginButton>
             </ScrollView>
         );
     }
