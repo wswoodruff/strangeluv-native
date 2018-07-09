@@ -71,7 +71,6 @@ If all goes well you should see something like this,
 
 
 ## Application Structure
-Note the [nestable `screens/`](https://github.com/davezuko/react-redux-starter-kit/wiki/Fractal-Project-Structure).
 
 ```
 .
