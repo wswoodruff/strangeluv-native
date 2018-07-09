@@ -15,7 +15,6 @@ Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) Rea
 
 ## Table of Contents
 1. [Toolset](#toolset)
-1. [Requirements](#requirements)
 1. [Getting Started](#getting-started)
 1. [Application Structure](#application-structure)
 1. [Styling](#styling)
@@ -31,11 +30,6 @@ Here you find a fork of [this](https://github.com/BigRoomStudios/strangeluv) Rea
 * [styled-components](https://github.com/styled-components/styled-components)
 * [babel](https://github.com/babel/babel)
 * [eslint](http://eslint.org)
-
-## Requirements
-```
-* react-native `0.44.1`
-```
 
 ## Getting Started
 
