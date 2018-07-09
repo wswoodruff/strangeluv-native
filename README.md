@@ -76,28 +76,25 @@ Note the [nestable `screens/`](https://github.com/davezuko/react-redux-starter-k
 ```
 .
 ├── android/                 # Android app folder project (managed by react-native)
-├── config/                  # Project configuration settings
 ├── ios/                     # iOS app folder project (managed by react-native)
+├── config/                  # Project configuration settings
 ├── src/                     # Application source code
 │   ├── index.js             # Application bootstrap and rendering
 │   ├── action-types/        # Action types
 │   ├── actions/             # Action creators
 │   ├── reducers/            # Redux reducers
-│   ├── components/          # Reusable UI-only (dumb/stateless) components
-│   ├── containers/          # Reusable container (smart/stateful) components
+│   ├── components/          # App-wide components
+│   ├── containers/          # App-wide containers (for use with redux connect)
 │   ├── navigators/          # Contains the app's main navigator
 │   ├── static/              # Static assets (not imported anywhere in source code)
-│   ├── styles/              # Application-wide styles
+│   ├── styles/              # App-wide styles
 │   ├── wiring/              # Wiring between Redux and the app
 │   └── screens/             # Main screen definitions and async split points
 │       ├── index.js         # Bootstrap main application screens with store, connect with app navigator
-│       └── home/            # Fractal route
-│           ├── index.js     # Route definitions and async split points
-│           ├── $$$/         # Any folders you might find under src/ like reducers/, etc.
-│           └── screens/     # Nested screens
-│           └── navigators/  # Nested navigators
-│           └── components/  # Nested components
-│           └── containers/  # Nested containers
+│       └── home/            # Example home screen
+│           ├── index.js     # Route definition
+│           └── components/  # screen-specific components
+│           └── containers/  # screen-specific containers
 └── tests                    # Unit tests
 ```
 
