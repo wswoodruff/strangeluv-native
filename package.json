@@ -6,8 +6,8 @@
         "rc-start": "npm start -- --reset-cache",
         "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean",
         "clean-start": "npm run clean && npm run rc-start",
-        "fresh-install": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean --force && rm -rf ios && rm -rf android && npm install react-native && react-native upgrade && npm install && react-native link",
-        "fresh-start": "npm run fresh-install && npm run rc-start",
+        "fresh-install": "rm -rf package-lock.json && rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean --force && rm -rf ios && rm -rf android && npm install react-native && react-native upgrade && npm install && react-native link",
+        "fresh-start": "npm run fresh-install && npm run dev",
         "packager": "osascript -e 'tell application \"Terminal\" to do script \"cd '$(pwd)' && npm run rc-start\"'",
         "dev": "NODE_ENV=development npm run packager &&  react-native run-ios",
         "i": "node node_modules/react-native/local-cli/cli.js run-ios",
@@ -16,9 +16,11 @@
         "android": "node node_modules/react-native/local-cli/cli.js run-android",
         "link": "node node_modules/react-native/local-cli/cli.js link",
         "remotedev": "remotedev-debugger --hostname localhost --port 5678 --injectserver",
+        "glog": "(cd node_modules/react-native/third-party/glog-0.3.4 && ../../scripts/ios-configure-glog.sh)",
         "postinstall": "npm run link && npm run remotedev && react-native upgrade",
         "lint": "eslint src tests server",
-        "lint:src": "eslint src"
+        "lint:src": "eslint src",
+        "rename": "node node_modules/react-native-rename/lib/index.js"
     },
     "pre-commit": [
         "lint"
@@ -37,7 +39,6 @@
         "prop-types": "^15.6.0",
         "react": "16.4.0",
         "react-native": "^0.55.4",
-        "react-native-rename": "^2.2.0",
         "react-navigation": "2.0.4",
         "react-redux": "5.0.7",
         "redux": "4.0.0",
@@ -58,7 +59,9 @@
         "eslint-plugin-react": "7.8.2",
         "eslint-plugin-react-native": "^3.1.0",
         "pre-commit": "^1.2.2",
+        "react-native-rename": "^2.2.2",
         "remote-redux-devtools": "^0.5.7",
-        "remotedev-rn-debugger": "^0.8.3"
+        "remotedev-rn-debugger": "^0.8.3",
+        "remotedev-server": "^0.2.4"
     }
 }
