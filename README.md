@@ -93,8 +93,8 @@ Note the [nestable `screens/`](https://github.com/davezuko/react-redux-starter-k
 │       ├── index.js         # Bootstrap main application screens with store, connect with app navigator
 │       └── home/            # Example home screen
 │           ├── index.js     # Route definition
-│           └── components/  # screen-specific components
-│           └── containers/  # screen-specific containers
+│           └── components/  # Screen-specific components
+│           └── containers/  # Screen-specific containers
 └── tests                    # Unit tests
 ```
 
