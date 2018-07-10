@@ -1,4 +1,4 @@
-const Reducers = require('wiring/reducers');
+const Reducers = require('../wiring/reducers');
 const Connect = require('react-redux').connect;
 const { createStackNavigator: CreateStackNavigator } = require('react-navigation');
 const internals = {};
@@ -11,7 +11,7 @@ internals.connect = Connect(
 
 module.exports = (store) => {
 
-    const Screens = require('screens')(store);
+    const Screens = require('../screens')(store);
 
     if (!Screens.routeConfig || !Screens.initialRouteName) {
         throw new Error('Screens must export props "routeConfig" and "initialRouteName"');
@@ -24,7 +24,7 @@ module.exports = (store) => {
         }
     );
 
-    const appNavReducer = require('reducers/nav')(AppNavigator);
+    const appNavReducer = require('../reducers/nav')(AppNavigator);
     Reducers.inject(store, { key: 'nav', reducer: appNavReducer });
 
     return internals.connect(AppNavigator);

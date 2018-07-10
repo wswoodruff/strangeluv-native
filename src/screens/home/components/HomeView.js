@@ -31,13 +31,14 @@ module.exports = class HomeView extends React.PureComponent {
 
     render() {
 
-        const { navigation } = this.props;
-
         return (
             <ScrollView>
-                <BeginButton>
+                <BeginButton onPress={this.navigate(
+                    this.props.navigation,
+                    'ARPlayground'
+                )}>
                     <BtnText>
-                        Start Demo
+                        START DEMO
                     </BtnText>
                 </BeginButton>
             </ScrollView>

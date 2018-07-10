@@ -1,46 +1,24 @@
 const React = require('react');
-const T = require('prop-types');
-const { ScrollView } = require('react-native');
+const { ViroARSceneNavigator } = require('react-viro');
+
+const PlaygroundScene = require('../scenes/Playground');
 
 // Styles
 
-const { BeginButton, BtnText } = require('./styles');
-
 // Component
 
-module.exports = class HomeView extends React.PureComponent {
-
-    static propTypes = {
-        navigation: T.object.isRequired
-    };
-
-    constructor() {
-
-        super();
-
-        this.navigate = this._navigate.bind(this);
-    }
-
-    _navigate(navigation, path) {
-
-        return (...a) => {
-
-            navigation.navigate(path);
-        };
-    }
+module.exports = class ARPlayground extends React.PureComponent {
 
     render() {
 
-        const { navigation } = this.props;
-
         return (
-            <ScrollView>
-                <BeginButton>
-                    <BtnText>
-                        Start Demo
-                    </BtnText>
-                </BeginButton>
-            </ScrollView>
+            // VIRO_API_KEY set in globals.js
+            <ViroARSceneNavigator
+                apiKey={process.env.VIRO_API_KEY}
+                initialScene={{
+                    scene: PlaygroundScene
+                }}
+            />
         );
     }
 };

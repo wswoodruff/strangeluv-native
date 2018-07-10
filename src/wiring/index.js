@@ -6,7 +6,7 @@ module.exports = (store) => {
     if (module.hot) {
         module.hot.accept(() => {
 
-            const updatedReducers = require('reducers');
+            const updatedReducers = require('../reducers');
 
             Object.keys(updatedReducers).forEach((key) => {
 
@@ -20,5 +20,5 @@ module.exports = (store) => {
         });
     }
 
-    return require('reducers');
+    return require('../reducers');
 };
