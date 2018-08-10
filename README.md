@@ -140,6 +140,10 @@ Let's test this. Go in `src/screens/home/components/styles.js` and comment out t
 
 ## Troubleshooting
 
+#### Tips and Tricks
+- Current default is iPhone. If you need to test tablet, open the project in XCode and select `Devices: Universal` in the `Deployment Info` section
+- To change simulator device, edit the `dev script` in `package.json` to add `"run-ios -simulator 'iPad Air 2'"` or whatever device you want to launch
+
 #### Got a red sreen? Try these:
 
 - Reload the simulator
