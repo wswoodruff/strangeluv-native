@@ -1,6 +1,7 @@
 const Reducers = require('wiring/reducers');
 const Connect = require('react-redux').connect;
 const { createStackNavigator: CreateStackNavigator } = require('react-navigation');
+
 const internals = {};
 
 internals.connect = Connect(
@@ -25,6 +26,7 @@ module.exports = (store) => {
     );
 
     const appNavReducer = require('reducers/nav')(AppNavigator);
+
     Reducers.inject(store, { key: 'nav', reducer: appNavReducer });
 
     return internals.connect(AppNavigator);

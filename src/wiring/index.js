@@ -1,4 +1,3 @@
-
 const WiringReducers = require('./reducers');
 
 module.exports = (store) => {
