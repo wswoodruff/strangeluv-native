@@ -6,9 +6,9 @@ const Theme = require('styles/theme');
 const GStyles = require('styles'); // global styles
 // const LStyles = require('./styles'); // local styles
 
-const { ScrollView, Text } = GStyles;
+const { ScrollView } = GStyles;
 
-const StylishText = Text.extend`
+const StylishText = GStyles.Text`
     color: ${Theme.primaryColor}
 `;
 

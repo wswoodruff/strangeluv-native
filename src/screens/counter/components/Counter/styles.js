@@ -1,9 +1,9 @@
-const { Text } = require('styles');
+const { default: styled } = require('styled-components/native');
 const Theme = require('styles/theme');
 
 module.exports = {
 
-    StylishText: Text.extend`
+    StylishText: styled.Text`
         color: ${Theme.primaryColor};
     `
 };
