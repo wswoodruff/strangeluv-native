@@ -1,4 +1,3 @@
-
 const { Text } = require('styles');
 const Theme = require('styles/theme');
 

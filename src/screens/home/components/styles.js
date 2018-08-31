@@ -1,4 +1,3 @@
-
 const Theme = require('styles/theme');
 const { Duck, Text } = require('styles');
 

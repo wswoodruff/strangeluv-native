@@ -1,4 +1,3 @@
-
 // Do not add this to the list in reducers/index.js
 
 module.exports = (AppStackNavigator) => {
