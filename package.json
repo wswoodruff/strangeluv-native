@@ -18,12 +18,11 @@
         "remotedev": "remotedev-debugger --hostname localhost --port 5678 --injectserver",
         "glog": "(cd node_modules/react-native/third-party/glog-0.3.4 && ../../scripts/ios-configure-glog.sh)",
         "postinstall": "npm run link && npm run remotedev && react-native upgrade",
-        "lint": "eslint src tests server",
-        "lint:src": "eslint src",
+        "lint": "eslint src",
         "rename": "node node_modules/react-native-rename/lib/index.js"
     },
     "pre-commit": [
-        "lint:src"
+        "lint"
     ],
     "dependencies": {
         "babel-cli": "^6.26.0",
