@@ -2,13 +2,14 @@ const React = require('react');
 const PropTypes = require('prop-types');
 
 // Styles
+const { default: styled } = require('styled-components/native');
 const Theme = require('styles/theme');
 const GStyles = require('styles'); // global styles
 // const LStyles = require('./styles'); // local styles
 
-const { ScrollView } = GStyles;
+const { ScrollView, Text } = GStyles;
 
-const StylishText = GStyles.Text`
+const StylishText = styled(Text)`
     color: ${Theme.primaryColor}
 `;
 

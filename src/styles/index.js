@@ -12,7 +12,7 @@ module.exports = {
         padding: 128px;
     `,
     Text: StyledText,
-    Title: styled.Text`
+    Title: styled(StyledText)`
         font-size: 19px;
         font-weight: bold;
         text-align: center;
