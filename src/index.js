@@ -1,9 +1,11 @@
 const React = require('react');
 const ReactNative = require('react-native');
+
 const AppRegistry = ReactNative.AppRegistry;
 const AppContainer = require('containers/App');
 const CreateReactClass = require('create-react-class');
 const CreateStore = require('wiring/create-store');
+
 require('../globals');
 
 if (__DEV__) {

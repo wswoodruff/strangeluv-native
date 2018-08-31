@@ -1,14 +1,14 @@
-
 const Theme = require('styles/theme');
 const { Duck, Text } = require('styles');
+const { default: styled } = require('styled-components/native');
 
 module.exports = {
-    Duck: Duck.extend`
+    Duck: styled(Duck)`
         margin-top: 20px;
         width: 120px;
         height: 120px;
     `,
-    InheritStylesText: Text.extend`
+    InheritStylesText: styled(Text)`
         color: ${(props) => props.color || Theme.secondaryColor}
     `
 };
