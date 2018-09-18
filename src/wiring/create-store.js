@@ -8,7 +8,7 @@ module.exports = (initialState = {}) => {
     let composeFunc = Redux.compose;
 
     if (__DEV__) {
-        composeFunc = require('remote-redux-devtools').composeWithDevTools({ realtime: true, port: 5678 });
+        composeFunc = require('redux-devtools-extension').composeWithDevTools({ realtime: true, port: 5678 });
     }
 
     const store = Redux.createStore(
