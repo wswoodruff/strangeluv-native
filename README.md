@@ -68,7 +68,13 @@ If all goes well you should see something like this,
 |`dev`, `i`, `ios`|Starts the app in an iOS simulator|
 |`a`, `android`|Starts the app in an Android simulator|
 
-
+## Generate app icons
+- `npm install app-icon -g`
+- `brew install imagemagick`
+- add an square image named icon.png
+   - 512x512px or greater
+   - place into the project directory
+- `app-icon generate`
 
 ## Application Structure
 
@@ -163,8 +169,8 @@ We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding f
 ### Developer Tools
 - You get Redux dev tools inside react-native's "native" debugger! To enable remote debugging, open the menu once inside the app via Cmd+D, etc. and hit "Debug JS Remotely".
 
-#### Works with 
-- [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and 
+#### Works with
+- [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and
 - [remote-redux-devtools-on-debugger](https://github.com/jhen0409/remote-redux-devtools-on-debugger)
 - HMR support for reducers! Your reducers will update without reloading if you've enabled hot module reloading.
 
@@ -172,7 +178,7 @@ We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding f
 You can require the top-level folders like `require(containers/App);` because of the setup in `.babelrc`.
 
 ### Routing
-We use `react-navigation` 
+We use `react-navigation`
 [navigator definitions](https://reactnavigation.org/docs/navigators/stack#StackNavigatorConfig) and
 [route definitions](https://reactnavigation.org/docs/navigators/stack#RouteConfigs) (`<route>/index.js`)
 
