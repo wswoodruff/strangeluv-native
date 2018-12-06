@@ -3,15 +3,13 @@ const Reducers = require('./reducers');
 const Middleware = require('./middleware');
 const Enhancers = require('./enhancers');
 
+const createStore = __DEV__ ? require('utils/reactotron-config').createStore : Redux.createStore;
+
 module.exports = (initialState = {}) => {
 
-    let composeFunc = Redux.compose;
+    const composeFunc = Redux.compose;
 
-    if (__DEV__) {
-        composeFunc = require('redux-devtools-extension').composeWithDevTools({ realtime: true, port: 5678 });
-    }
-
-    const store = Redux.createStore(
+    const store = createStore(
         Reducers.makeRoot(),
         initialState,
         composeFunc(
