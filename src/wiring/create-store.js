@@ -1,19 +1,17 @@
-const Redux = require('redux');
+const { applyMiddleware, createStore, compose } = require('redux');
 const Reducers = require('./reducers');
 const Middleware = require('./middleware');
 const Enhancers = require('./enhancers');
 
-const createStore = __DEV__ ? require('utils/reactotron-config').createStore : Redux.createStore;
-
 module.exports = (initialState = {}) => {
 
-    const composeFunc = Redux.compose;
+    const createStoreFunc = __DEV__ ? require('utils/reactotron-config').createStore : createStore;
 
-    const store = createStore(
+    const store = createStoreFunc(
         Reducers.makeRoot(),
         initialState,
-        composeFunc(
-            Redux.applyMiddleware(...Middleware),
+        compose(
+            applyMiddleware(...Middleware),
             ...Enhancers
         )
     );
