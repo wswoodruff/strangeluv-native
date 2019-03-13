@@ -68,7 +68,13 @@ If all goes well you should see something like this,
 |`dev`, `i`, `ios`|Starts the app in an iOS simulator|
 |`a`, `android`|Starts the app in an Android simulator|
 
-
+## Generate app icons
+- `npm install app-icon -g`
+- `brew install imagemagick`
+- add an square image named icon.png
+   - 512x512px or greater
+   - place into the project directory
+- `app-icon generate`
 
 ## Application Structure
 
@@ -161,18 +167,15 @@ Let's test this. Go in `src/screens/home/components/styles.js` and comment out t
 We favor the [hapi style guide](hapijs.com/styleguide).  Yes, even when coding for the browser or for react-native!  The idea is to maintain fluency for developers who work both on the server, browser, and in react-native.  It is supposed to be the same language, after all!  Node and V8 move fast enough on their own, so we plan to keep up-to-date with that ecosystem rather than the hyperspeed with which transpilers make available incompletely-spec'd JS features.  It's worth noting that for the time being that includes ES6 modules.  We additionally have some standard React lint rules.  Just `npm run lint` to see how you're doing!
 
 ### Developer Tools
-- You get Redux dev tools inside react-native's "native" debugger! To enable remote debugging, open the menu once inside the app via Cmd+D, etc. and hit "Debug JS Remotely".
+You can wire up any developer tool you desire, out of the box we have implemented Reactotron, which is a standalone cross platform app.
 
-#### Works with 
-- [remote-redux-devtools](https://github.com/zalmoxisus/remote-redux-devtools) and 
-- [remote-redux-devtools-on-debugger](https://github.com/jhen0409/remote-redux-devtools-on-debugger)
-- HMR support for reducers! Your reducers will update without reloading if you've enabled hot module reloading.
+Download the app source-code here: https://github.com/infinitered/reactotron/releases
 
 #### Requiring with `./src` as root
 You can require the top-level folders like `require(containers/App);` because of the setup in `.babelrc`.
 
 ### Routing
-We use `react-navigation` 
+We use `react-navigation`
 [navigator definitions](https://reactnavigation.org/docs/navigators/stack#StackNavigatorConfig) and
 [route definitions](https://reactnavigation.org/docs/navigators/stack#RouteConfigs) (`<route>/index.js`)
 

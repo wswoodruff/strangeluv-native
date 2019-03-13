@@ -2,7 +2,6 @@ const React = require('react');
 const T = require('prop-types');
 
 // Styles
-
 const GStyles = require('styles'); // global styles
 const LStyles = require('./styles'); // local styles
 
@@ -15,7 +14,6 @@ const {
 const { StylishText } = LStyles;
 
 // Component
-
 module.exports = class Counter extends React.PureComponent {
 
     static propTypes = {
